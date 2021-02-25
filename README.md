@@ -4,8 +4,12 @@
 
 ### Integrantes
 
-  * [João Vitor Alves de Araújo](mailto:joaoaa21@hotmail.com)  
-  * [Kevin Luis Apolinario Batista](mailto:k.luis360@gmail.com)
-  *	[Nilo Mendonca de Brito Junior](mailto:nilojrmendonca@gmail.com)
-  * [Rodrigo Carvalho dos Santos](mailto:ro12062000@gmail.com)
-  * [George Marsicano Correa](mailto:georgemarsicano@unb.br) (Professor)
+| Integrante                                                        | Função  |
+|:-:|:-:|
+| [João Vitor Alves de Araújo](https://github.com/Joaoaalves)       | - |
+| [Kevin Luis Apolinario Batista](https://github.com/k3vin-batista) | - |
+| [Nilo Mendonca de Brito Junior](https://github.com/NiloMendonca)  | - |
+| [Rodrigo Carvalho dos Santos](https://github.com/Rocsantos)       | - |
+| [George Marsicano Correa](mailto:georgemarsicano@unb.br)          | Professor e Orientador  |
+
+
