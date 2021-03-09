@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Monitoria</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/monitoria.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<a href="/" class="voltar"><i class="fas fa-arrow-left"></i></a>
+		{% if dados %}
+			<p class="p">Campus: {{dados["campus"]}}</p>
+			<p class="p">codigo: {{dados["codigo"]}}</p>
+			<p class="p">disciplina: {{dados["disciplina"]}}</p>
+			<p class="p">email: {{dados["email"]}}</p>
+			<p class="p">horario: {{dados["horario"]}}</p>
+			<p class="p">nome: {{dados["nome"]}}</p>
+			<p class="p">turma: {{dados["turma"]}}</p>
+			<p class="p">vagas: {{dados["vagas"]}}</p>
+		{% else %}
+			<p>Ops! Dados nao encontrados</p>
+		{% endif %}
+	</body>
+</html>

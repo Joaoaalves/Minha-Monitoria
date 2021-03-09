@@ -1,0 +1,18 @@
+<html>
+<body>
+	{% if dados %}
+		{{ dados}}
+	{% endif %}
+	<a href="/"><button>CANCELAR</button></a>
+	<form method="post">
+		<h3>Monitoria</h3>
+		Campus: <input type="text" name="campus"/><br>
+		Codigo da disciplina: <input type="text" name="codigo"/><br>
+		Nome da disciplina: <input type="text" name="disciplina"/><br>
+		Turma: <input type="text" name="turma"/><br>
+		Horario: <input type="text" name="horario"/><br>
+		Vagas: <input type="number" name="vagas"/><br>
+		<input type="submit" name="submit">
+	</form>
+</body>
+</html>

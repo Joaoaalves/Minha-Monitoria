@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Login</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<form method="post" class="form">
+			<a href="/" class="voltar"><i class="fas fa-arrow-left"></i></a>
+			<h3>LOGIN</h3>
+			
+			<input type="email" name="email" class="input" placeholder="E-mail"/>
+			<input type="password" name="senha" class="input" placeholder="Senha"/>
+			
+			{% if dados %}
+				<p class="p">{{ dados}}</p>
+			{% endif %}
+
+			<input type="submit" name="Entrar" class="submit"><br>
+			<a href="/cadastro">CADASTRAR</a>
+			<a href="/recuperarSenha">RECUPERAR SENHA</a>			
+		</form>
+	</body>
+</html>

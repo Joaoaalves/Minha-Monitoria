@@ -1,0 +1,16 @@
+<html>
+<body>
+	{% if dados %}
+		{{ dados}}
+	{% endif %}
+	<a href="/"><button>CANCELAR</button></a>
+	<form method="post">
+		<h3>CADASTRO</h3>
+		Nome: <input type="name" name="nome"/><br>
+		E-mail: <input type="email" name="email"/><br>
+		Senha: <input type="password" name="senha"/><br>
+		<input type="submit" name="submit">
+	</form>
+	<a href="/login"><button>LOGIN</button></a>
+</body>
+</html>
