@@ -36,18 +36,18 @@
 
 |Feature|ID|Descrição|
 |:--:|-----|:--:|
-|F1|US01| Eu, como usuário, desejo entender o funcionamento da aplicação|
-|F2,F4|US02| Eu, como usuário, desejo me cadastrar|
+|F1|US01| Eu, como usuário(Professor e Aluno), desejo entender o funcionamento da aplicação|
+|F2,F4|US02| Eu, como usuário(Professor e Aluno), desejo me cadastrar|
 |F3|US03| Eu, como usuário(Professor), desejo cadastrar monitoria|
-|F5|US04| Eu, como usuário(Monitor), desejo me cadastrar como monitor em monitorias|
-|F5|US05| Eu, como usuário(Monitor), desejo enviar minhas informações para cadastro em monitoria|
+|F5|US04| Eu, como usuário(Aluno), desejo me cadastrar como monitor em monitorias|
+|F5|US05| Eu, como usuário(Aluno), desejo enviar minhas informações para cadastro em monitoria|
 |F5|US06| Eu, como usuário(Professor), desejor receber informações de monitores cadastrados|
-|F6|US07| Eu, como usuário, desejo validar meu cadastro|
+|F6|US07| Eu, como usuário(Professor e Aluno), desejo validar meu cadastro|
 |F7|US08| Eu, como usuário(Professor), desejo listar monitores em minhas monitorias|
 |F7|US09| Eu, como usuário(Professor), desejo selecionar monitores listados em minhas monitorias|
-|F8|US10| Eu, como usuário(Monitor), desejo ser informado quando for selecionado como monitor|
+|F8|US10| Eu, como usuário(Aluno), desejo ser informado quando for selecionado como monitor|
 |F8|US11| Eu, como usuário(Professor), desejo ser informado quando um monitor se inscrever em minha monitoria|
-|F9|US12| Eu, como usuário(Monitor), desejo listar monitorias disponíveis|
-|F10|US13| Eu, como usuário(Monitor), desejo buscar monitorias|
-|F10|US14| Eu, como usuário(Monitor), desejo filtrar as buscas|
-|F11|US15| Eu, como usuário, desejo compartilhar monitorias em redes sociais|
+|F9|US12| Eu, como usuário(Aluno), desejo listar monitorias disponíveis|
+|F10|US13| Eu, como usuário(Aluno), desejo buscar monitorias|
+|F10|US14| Eu, como usuário(Aluno), desejo filtrar as buscas|
+|F11|US15| Eu, como usuário(Professor e Aluno), desejo compartilhar monitorias em redes sociais|
