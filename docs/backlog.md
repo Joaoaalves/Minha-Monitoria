@@ -30,9 +30,9 @@
 |F2|EP2| Cadastro de Professor                      |
 |F3|EP2| Cadastro de monitoria                        |
 |F4|EP3| Cadastro de Aluno                          |
-|F5|EP3, EP4| Cadastro de monitor em monitoria        |
+|F5|EP3, EP4| Cadastro de Aluno em monitoria        |
 |F6|EP5| Validação de Email para novos usuários     |
-|F7|EP5| Listagem de monitores candidatos           |
+|F7|EP5| Listagem de Alunos candidatos           |
 |F8|EP5| Aviso de inscrições                        |
 |F9|EP5| Listar monitorias disponíveis                |
 |F10|EP5| Buscas de monitorias                        |
