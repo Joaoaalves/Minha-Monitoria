@@ -1,15 +1,18 @@
 # Backlog do Produto
 
+
 |Data|Versão|Descrição|Autor|
 |:--:|:--:|:--:|:---:|
 | 07/03/2021 | 0.1 | Versão inicial do backlog | João Vitor Alves |
 | 09/03/2021 | 0.2 | Separação do épico Usuários | Kevin |
 | 09/03/2021 | 0.3 | Adicionando Tema estratégico | Kevin |
 
+
 ## 1. Tema Estratégico
 |Tema|Descrição|
 |:--:|:--:|
 |T1|Aplicação padrão para gerenciamento de monitorias da UnB|
+
 
 ## 2. Épicos
 
@@ -37,6 +40,7 @@
 |F9|EP5| Listar monitorias disponíveis                |
 |F10|EP5| Buscas de monitorias                        |
 |F11|EP5| Compartilhamento de Vagas em redes sociais|
+
 
 ## 4. Histórias de Usuários
 
