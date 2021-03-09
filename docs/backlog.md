@@ -3,15 +3,17 @@
 |Data|Versão|Descrição|Autor|
 |:--:|:--:|:--:|:---:|
 | 07/03/2021 | 0.1 | Versão inicial do backlog | João Vitor Alves |
+| 09/03/2021 | 0.2 | Separação do épico Usuários | Kevin |
 
 ## 1. Épicos
 
 |Épicos|Descrição|
 |:--:|:--:|
 |EP1|Apresentação do Produto|
-|EP1|Usuários               |
-|EP2|Monitorias               |
-|EP3|Relatórios             |
+|EP2|Usuário Professor      |
+|EP3|Usuário Aluno          |
+|EP4|Monitorias             |
+|EP5|Relatórios             |
 
 
 ## 2. Features
@@ -20,15 +22,15 @@
 |:--:|:--:|:--:|
 |F1|EP1| Informativo de funcionamento do produto    |
 |F2|EP2| Cadastro de Professor                      |
-|F3|EP3| Cadastro de monitoria                        |
-|F4|EP2| Cadastro de Aluno                          |
-|F5|EP3, EP2| Cadastro de monitor em monitoria        |
-|F6|EP3| Validação de Email para novos usuários     |
-|F7|EP4| Listagem de monitores candidatos           |
-|F8|EP4| Aviso de inscrições                        |
-|F9|EP3| Listar monitorias disponíveis                |
-|F10|EP3| Buscas de monitorias                        |
-|F11|EP3| Compartilhamento de Vagas em redes sociais|
+|F3|EP2| Cadastro de monitoria                        |
+|F4|EP3| Cadastro de Aluno                          |
+|F5|EP3, EP4| Cadastro de monitor em monitoria        |
+|F6|EP5| Validação de Email para novos usuários     |
+|F7|EP5| Listagem de monitores candidatos           |
+|F8|EP5| Aviso de inscrições                        |
+|F9|EP5| Listar monitorias disponíveis                |
+|F10|EP5| Buscas de monitorias                        |
+|F11|EP5| Compartilhamento de Vagas em redes sociais|
 
 ## 3. Histórias de Usuários
 
