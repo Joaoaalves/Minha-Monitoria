@@ -3,6 +3,7 @@ import flask
 import pyrebase
 import datetime
 from flask_mail import Mail, Message
+import re
 
 app.secret_key = 'dfn3e1QScX9o6u0eDGw2yCfh2yBvUR6'
 
@@ -51,7 +52,7 @@ mail.init_app(app)
 # RETORNAR DADOS
 # users = db.child("users").get()
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def home():
 	try:
 		emailVerificado = auth.get_account_info(flask.session['usuario'])['users'][0]['emailVerified']
@@ -62,6 +63,11 @@ def home():
 		email = None
 		nome = None
 	monitorias = db.child("monitorias").get()
+
+	if flask.request.method == 'POST':
+		pesquisa = flask.request.form['busca']
+		campus = flask.request.form['campus']
+		return flask.redirect('/busca?pesquisa='+pesquisa+'&campus='+campus)
 	return flask.render_template('home.html', dados=[email, monitorias.val(), emailVerificado, nome])
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -165,6 +171,33 @@ def mensagem():
 		except:
 			return flask.render_template('mensagem.html', dados="Erro! Tente novamente")
 	return flask.render_template('mensagem.html')
+
+@app.route('/busca', methods=['GET', 'POST'])
+def busca():
+	pesquisa = flask.request.args.get('pesquisa', None)
+	campus = flask.request.args.get('campus', None)
+
+	try:
+		emailVerificado = auth.get_account_info(flask.session['usuario'])['users'][0]['emailVerified']
+		email = auth.get_account_info(flask.session['usuario'])['users'][0]['email']
+		nome =  db.child("professores").child(retornarChave(email)).child('nome').get().val()
+	except:
+		emailVerificado = False
+		email = None
+		nome = None
+	monitorias = db.child("monitorias").get()
+	monitoriasFiltrada = []
+	for i in monitorias.val():
+		if (campus == 'todos' or monitorias.val()[i]['campus'] == campus) and (re.search(pesquisa.lower(), monitorias.val()[i]['nome'].lower()) or re.search(pesquisa.lower(), monitorias.val()[i]['disciplina'].lower()) or re.search(pesquisa.lower(), monitorias.val()[i]['codigo'].lower())):
+			temp = monitorias.val()[i]
+			temp['chave'] = i
+			monitoriasFiltrada.append(temp)
+
+	if flask.request.method == 'POST':
+		pesquisa = flask.request.form['busca']
+		campus = flask.request.form['campus']
+		return flask.redirect('/busca?pesquisa='+pesquisa+'&campus='+campus)
+	return flask.render_template('busca.html', dados=[email, monitoriasFiltrada, emailVerificado, nome, pesquisa])
 
 @app.route('/logout')
 def logout():
