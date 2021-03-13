@@ -1,7 +1,7 @@
 <html>
 	<head>
-		<title>Home</title>
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+		<title>Buscar</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/busca.css') }}">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	</head>
@@ -12,32 +12,32 @@
 				{% if dados[1] != None %}
 					{% for monitoria in dados[1] %}
 						<div class="containerCartao">
-							Professor: {{ dados[1][monitoria]['nome'] }}
-							Campus: {{ dados[1][monitoria]['campus'] }}
-							Codigo: {{ dados[1][monitoria]['codigo'] }}
-							Disciplina: {{ dados[1][monitoria]['disciplina'] }}
+							Professor: {{ monitoria['nome'] }}
+							Campus: {{ monitoria['campus'] }}
+							Codigo: {{ monitoria['codigo'] }}
+							Disciplina: {{ monitoria['disciplina'] }}
 
 							<!-- VISUALIZAR -->
-							<a href="/monitoria?chave={{monitoria}}"><button>VER</button></a>
+							<a href="/monitoria?chave={{monitoria['chave']}}"><button>VER</button></a>
 							
 							<!-- COMPARTILHAR -->
 							<div class="dropdown">
 							  <button class="botaoCompartilhar" onclick="compartilhar()"><i class="fas fa-share-alt"></i></button>
 							  <div id="containerDropdown" class="containerDropdown">
-							    <a href="https://www.facebook.com/sharer/sharer.php?u=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank">Facebook</a>
-							    <a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank">WhatsApp</a>
+							    <a href="https://www.facebook.com/sharer/sharer.php?u=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria['chave']}}" target="_blank">Facebook</a>
+							    <a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria['chave']}}" target="_blank">WhatsApp</a>
 							  </div>
 							</div>
 
 							<!-- SALVAR -->
-							<a id="test" onclick="salvar({{dados[1][monitoria]}})"><button><i class="fas fa-plus-square"></i></button></a>
+							<a id="test" onclick="salvar({{monitoria['chave']}})"><button><i class="fas fa-plus-square"></i></button></a>
 
 							<!-- ENVIAR DADOS -->
-							<a href="/mensagem?codigo={{dados[1][monitoria]['codigo']}}&disciplina={{dados[1][monitoria]['disciplina']}}&turma={{dados[1][monitoria]['turma']}}&vagas={{dados[1][monitoria]['vagas']}}&email={{dados[1][monitoria]['email']}}"><button><i class="fas fa-paper-plane"></i></button></a>
+							<a href="/mensagem?codigo={{monitoria['codigo']}}&disciplina={{monitoria['disciplina']}}&turma={{monitoria['turma']}}&vagas={{monitoria['vagas']}}&email={{monitoria['email']}}"><button><i class="fas fa-paper-plane"></i></button></a>
 
 							<!-- EXCLUIR -->
-							{% if dados[0] == dados[1][monitoria]['email'] %}
-								<a href="/excluir?chave={{monitoria}}"><button><i class="far fa-trash-alt"></i></button></a>
+							{% if dados[0] == monitoria['email'] %}
+								<a href="/excluir?chave={{monitoria['chave']}}"><button><i class="far fa-trash-alt"></i></button></a>
 							{% endif %}
 
 						</div>
@@ -65,12 +65,10 @@
 				<button onclick="abrirNav()"><i class="fas fa-bars"></i></button>
 			</div>
 
-			<div class="logo">Minha Monitoria</div>
-
 			<!-- PESQUISAR -->
 			<div class="pesquisa">
 				<form method="post" class="form">
-					<input type="text" placeholder="Buscar" name="busca" class="inputPesquisa">
+					<input type="text" placeholder="Buscar" name="busca" class="inputPesquisa" value="{{dados[4]}}">
 
 					<!-- FILTROS -->
 					<select name="campus">
@@ -89,32 +87,32 @@
 				{% if dados[1] != None %}
 					{% for monitoria in dados[1] %}
 						<div class="containerCartao">
-							Professor: {{ dados[1][monitoria]['nome'] }}
-							Campus: {{ dados[1][monitoria]['campus'] }}
-							Codigo: {{ dados[1][monitoria]['codigo'] }}
-							Disciplina: {{ dados[1][monitoria]['disciplina'] }}
+							Professor: {{ monitoria['nome'] }}
+							Campus: {{ monitoria['campus'] }}
+							Codigo: {{ monitoria['codigo'] }}
+							Disciplina: {{ monitoria['disciplina'] }}
 
 							<!-- VISUALIZAR -->
-							<a href="/monitoria?chave={{monitoria}}"><button>VER</button></a>
+							<a href="/monitoria?chave={{monitoria['chave']}}"><button>VER</button></a>
 							
 							<!-- COMPARTILHAR -->
 							<div class="dropdown">
 							  <button class="botaoCompartilhar" onclick="compartilhar()"><i class="fas fa-share-alt"></i></button>
 							  <div id="containerDropdown" class="containerDropdown">
-							    <a href="https://www.facebook.com/sharer/sharer.php?u=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank">Facebook</a>
-							    <a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank">WhatsApp</a>
+							    <a href="https://www.facebook.com/sharer/sharer.php?u=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria['chave']}}" target="_blank">Facebook</a>
+							    <a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria['chave']}}" target="_blank">WhatsApp</a>
 							  </div>
 							</div>
 
 							<!-- SALVAR -->
-							<a id="test" onclick="salvar({{dados[1][monitoria]}})"><button><i class="fas fa-plus-square"></i></button></a>
+							<a id="test" onclick="salvar({{monitoria['chave']}})"><button><i class="fas fa-plus-square"></i></button></a>
 
 							<!-- ENVIAR DADOS -->
-							<a href="/mensagem?codigo={{dados[1][monitoria]['codigo']}}&disciplina={{dados[1][monitoria]['disciplina']}}&turma={{dados[1][monitoria]['turma']}}&vagas={{dados[1][monitoria]['vagas']}}&email={{dados[1][monitoria]['email']}}"><button><i class="fas fa-paper-plane"></i></button></a>
+							<a href="/mensagem?codigo={{monitoria['codigo']}}&disciplina={{monitoria['disciplina']}}&turma={{monitoria['turma']}}&vagas={{monitoria['vagas']}}&email={{monitoria['email']}}"><button><i class="fas fa-paper-plane"></i></button></a>
 
 							<!-- EXCLUIR -->
-							{% if dados[0] == dados[1][monitoria]['email'] %}
-								<a href="/excluir?chave={{monitoria}}"><button><i class="far fa-trash-alt"></i></button></a>
+							{% if dados[0] == monitoria['email'] %}
+								<a href="/excluir?chave={{monitoria['chave']}}"><button><i class="far fa-trash-alt"></i></button></a>
 							{% endif %}
 
 						</div>
