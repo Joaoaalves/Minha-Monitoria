@@ -3,6 +3,21 @@ function compartilhar() {
   document.getElementById("containerDropdown").classList.toggle("show");
 }
 
+// User Container
+user_container = document.getElementById("user-container");
+user_btn = document.getElementById("user-btn");
+user_btn.onclick = function(){
+  user_container.style.display = "inline-block";
+}
+$(document).mouseup(function(e) 
+{
+    var container = $(user_container);
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
+    {
+        container.hide();
+    }
+});
+
 window.onclick = function(event) {
   if (!event.target.matches('.botaoCompartilhar')) {
     var dropdowns = document.getElementsByClassName("containerDropdown");

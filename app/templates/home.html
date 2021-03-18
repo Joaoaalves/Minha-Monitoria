@@ -53,22 +53,27 @@
 
 	<div id="main">
 		<div class="cabecalho">
-			{% if dados[3] != None %}
-			{{dados[3]}}
+
+			<button id="user-btn"><i class="fas fa-user"></i></button>
+			<div id="user-container">
+				{% if dados[3] != None %}
+				<p id="user-name">{{dados[3]}}</p>
+				<button onclick="window.location.href=''"></button>
+				<br>
+				<button onclick="window.location.href='/logout'" id="exit-btn">Sair</button><br>
+				{% else %}
+				<button onclick="window.location.href='/login'" id="lgn-btn">Login</button><br>
+				<button onclick="window.location.href='/cadastro'" id="cdst-btn">Cadastro</button>
+				{% endif %}
+			</div>
+			
 			{% if dados[2] %}
 			<!-- ADICIONAR NOVA MONITORIA -->
-			<a href="/novaMonitoria"><button><i class="fas fa-plus"></i></button></a>
-			{% else %}
-			<button id="botaoRecuperacao">Confirmar e-mail</button>
-			{% endif %}
-			<a href="/logout"><button>Sair</button></a><br>
-			{% else %}
-			<a href="/login"><button>Login</button></a>
-			<a href="/cadastro"><button>Cadastro</button></a>
+			<button onclick="window.location.href='/novaMonitoria'"><i class="fas fa-plus"></i></button>	
 			{% endif %}
 
 			<!-- MONITORIAS SALVAS -->
-			<button onclick="abrirNav()"><i class="fas fa-bars"></i></button>
+			<button onclick="abrirNav()" id="bars-btn"><i class="fas fa-bars"></i></button>
 		</div>
 
 		<div class="logo">Minha Monitoria</div>
