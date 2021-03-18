@@ -12,7 +12,7 @@
 ## 1. Tema Estratégico
 |Tema|Descrição|
 |:--:|:--:|
-|T1| Sistema para disponibilização
+|TE01| Sistema para disponibilização
 de monitorias da UnB|
 
 
@@ -29,12 +29,12 @@ de monitorias da UnB|
 |Feature|Épico|Descrição|
 |:--:|:--:|:--:|
 |FE01|EP01|  Gerenciamento de cadastro na
-aplicação    |
+aplicação |
 |FE2|EP01| Gerenciamento de login na
-aplicação                      |
-|FE3|EP02| Cadastros em monitorias                        |
-|FE4|EP02|  Informações de monitorias                          |
-|FE5|EP02| Requisições com monitorias        |
+aplicação |
+|FE3|EP02| Cadastros em monitorias |
+|FE4|EP02|  Informações de monitorias |
+|FE5|EP02| Requisições com monitorias |
 
 
 ## 4. Histórias de Usuários
