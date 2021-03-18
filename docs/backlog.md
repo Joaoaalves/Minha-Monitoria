@@ -12,8 +12,7 @@
 ## 1. Tema Estratégico
 |Tema|Descrição|
 |:--:|:--:|
-|TE01| Sistema para disponibilização
-de monitorias da UnB|
+|TE01| Sistema para disponibilização de monitorias da UnB|
 
 
 ## 2. Épicos
@@ -28,10 +27,8 @@ de monitorias da UnB|
 
 |Feature|Épico|Descrição|
 |:--:|:--:|:--:|
-|FE01|EP01|  Gerenciamento de cadastro na
-aplicação |
-|FE2|EP01| Gerenciamento de login na
-aplicação |
+|FE01|EP01|  Gerenciamento de cadastro na aplicação |
+|FE2|EP01| Gerenciamento de login na aplicação |
 |FE3|EP02| Cadastros em monitorias |
 |FE4|EP02|  Informações de monitorias |
 |FE5|EP02| Requisições com monitorias |
@@ -50,14 +47,10 @@ aplicação |
 |FE03|US06| Eu, como aluno desejo me cadastrar em monitorias|
 |FE04|US07| Eu, como usuário desejo visualizar as monitorias cadastradas|
 |FE04|US08| Eu, como usuario desejo buscar monitorias utilizando filtros de busca|
-|FE04|US09| Eu, como aluno desejo ter informações referentes ao IRA necessário
-para me cadastrar em uma monitoria|
-|FE04|US10|  Eu, como usuario desejo ver a quantidade de alunos cadastrados em
-uma vaga de monitoria|
-|FE05|US11| Eu, como professor desejo receber um email com as informações de
-cadastro do aluno em monitoria|
-|FE05|US12|  Eu, como usuario desejo compartilhar vagas de monitoria em redes
-sociais|
+|FE04|US09| Eu, como aluno desejo ter informações referentes ao IRA necessário para me cadastrar em uma monitoria|
+|FE04|US10|  Eu, como usuario desejo ver a quantidade de alunos cadastrados em uma vaga de monitoria|
+|FE05|US11| Eu, como professor desejo receber um email com as informações de cadastro do aluno em monitoria|
+|FE05|US12|  Eu, como usuario desejo compartilhar vagas de monitoria em redes sociais|
 |FE05|US13|  Eu, como usuario desejo salvar vagas de monitoria do meu interesse|
 
 ## 4. Requisitos não funcionais
