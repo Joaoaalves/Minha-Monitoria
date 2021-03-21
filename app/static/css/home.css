@@ -123,28 +123,46 @@ body {
 	text-align: center;
 	z-index: 1;
 }
-	.inputPesquisa {
-		width: 80%;
-		max-width: 400px;
-		height: 40px;
-		border-radius: 50px;
-		font-size: 20px;
-		margin: 0px;
-	}
-	.botaoPesquisa {
-		width: 40px;
-		height: 40px;
-		background-color: #2d2d2d;
-		color: white;
-		border-radius: 40px;
-	}
+#inputPesquisa {
+	width: 60%;
+	max-width: 300px;
+	height: 36px;
+	border: none;
+	border-width: 2px !important;
+	border-bottom: solid;
+	font-size: 16px;
+	margin: 0px;
+}
+#botaoPesquisa {
+	background-color: transparent;
+	border-color: rgb(0,64, 128);
+	border-radius: 12px;
+	padding: 4px 12px;
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+	position: relative;
+	bottom: -6px;
+	margin-left: 16px;
+}
+
+#botaoPesquisa:hover{
+	transform: scale(1.2);
+	background-color: rgb(0, 64, 128) !important;
+	color: white;
+}
+
+#botaoPesquisa:focus, #inputPesquisa:focus{
+	outline: none;
+}
+
+
 .monitorias {
 	width: 100%;
-	height: calc(100% - 200px);
-	background-color: rgb(0, 64, 128);
+	height: calc(100% - 400px);
+	background: linear-gradient(0deg, rgb(0, 0, 36) 0%, rgb(0,64,128) 45%);
 	position: relative;
 	left: 0px;
-	top: 0px;
+	bottom: -100px;
 	z-index: 0;
 }
 
@@ -233,4 +251,47 @@ button:hover{
 	font-size: 20;
 	color: white;
 	border-radius: 8px;
+}
+
+* {
+	font-family: 'Noto Sans JP', sans-serif;
+	
+}
+
+p{
+	font-weight: 200;
+}
+
+.containerCartao p{
+	line-height: 22px;
+}
+
+.containerCartao p bold{
+	font-weight: 700;
+}
+
+.containerCartao button{
+	font-weight: 500;
+	font-size: 18px;
+}
+
+#containerFiltros{
+	width: 400px;
+	display: inline-block;
+}
+
+#containerFiltros #filtros{
+	display: flex;
+	margin: 0px 80px;
+	height: 24px;
+	justify-content: center;
+}
+
+#filtros select{
+	margin: 0 8px;
+}
+
+#filtros select{
+	border-radius: 8px;
+	border-color: rgb(0, 64, 128);
 }
