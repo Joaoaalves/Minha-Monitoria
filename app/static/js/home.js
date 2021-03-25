@@ -7,7 +7,7 @@ function compartilhar() {
 user_container = document.getElementById("user-container");
 user_btn = document.getElementById("user-btn");
 user_btn.onclick = function(){
-  user_container.style.display = "inline-block";
+    user_container.style.display = "inline-block";
 }
 $(document).mouseup(function(e) 
 {

@@ -67,6 +67,7 @@
 		<div class="cabecalho">
 
 			<button id="user-btn"><i class="fas fa-user"></i></button>
+			
 			<div id="user-container">
 				{% if dados[3] != None %}
 				<p id="user-name">{{dados[3]}}</p>
@@ -74,6 +75,8 @@
 				<br>
 				<button onclick="window.location.href='/logout'" id="exit-btn">Sair</button><br>
 				{% else %}
+				<p>Você não está logado!</p>
+				<br>
 				<button onclick="window.location.href='/login'" id="lgn-btn">Login</button><br>
 				<button onclick="window.location.href='/cadastro'" id="cdst-btn">Cadastro</button>
 				{% endif %}
@@ -86,6 +89,7 @@
 
 			<!-- MONITORIAS SALVAS -->
 			<button onclick="abrirNav()" id="bars-btn"><i class="fas fa-bars"></i></button>
+			<a href="/" id="home-btn">Minha Monitoria</a>
 		</div>
 
 		<div class="logo">Minha Monitoria</div>
@@ -94,7 +98,7 @@
 		<div class="pesquisa">
 			<form method="post" class="form">
 				<input type="text" placeholder="Buscar" name="busca" id="inputPesquisa">
-				<input type="submit" name="Entrar" class="submit" id="botaoPesquisa"><br>
+				<input type="submit" name="Entrar" value="Buscar" class="submit" id="botaoPesquisa"><br>
 
 				<!-- FILTROS -->
 				<div id="containerFiltros">
