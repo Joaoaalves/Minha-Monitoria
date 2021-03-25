@@ -1,23 +1,25 @@
 from app import app
+import ast
 import flask
 import pyrebase
 import datetime
 from flask_mail import Mail, Message
 import re
 
-app.secret_key = 'dfn3e1QScX9o6u0eDGw2yCfh2yBvUR6'
+try:
+	with open("config/firebase.key", 'r') as f:
+		app.secret_key = f.readline()
+except:
+	print("Arquivo firebase.key não encontrado!")
+	exit()
 
-firebaseConfig = {
-	"apiKey": "AIzaSyCf2BUR63Xou0eDGwwtDMtRltpwgfneQSc",
-	"authDomain": "minha-monitoria.firebaseapp.com",
-	"databaseURL": "https://minha-monitoria-default-rtdb.firebaseio.com",
-	"projectId": "minha-monitoria",
-	"storageBucket": "minha-monitoria.appspot.com",
-	"messagingSenderId": "658905609079",
-	"appId": "1:658905609079:web:4264d25b50cd861f83e772",
-	"measurementId": "G-PY1W0J54VE",
-	"serviceAccount": "app/controllers/serviceAccountCredentials.json"
-}
+try:
+	with open("config/firebase.cfg", 'r') as f:
+		firebaseConfig = ast.literal_eval(f.read())
+except:
+	print("Arquivo firebase.cfg não encontrado!")	
+	exit()
+
 firebase = pyrebase.initialize_app(firebaseConfig)
 
 auth = firebase.auth()
@@ -25,12 +27,18 @@ db = firebase.database()
 usuario = ""
 mail = Mail()
 
-app.config['MAIL_SERVER']='smtp.mail.yahoo.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'minhamonitoria@yahoo.com'
-app.config['MAIL_PASSWORD'] = 'kygjanerwvyeuuhc'	#fga123456
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True
+with open("config/mail.key", 'r') as f:
+	mail_username = f.readline()
+	mail_password = f.readline()
+
+app.config.update({
+	'MAIL_SERVER' : 'smpt.mail.yahoo.com',
+	'MAIL_PORT' : 465,
+	'MAIL_USERNAME' : mail_username,
+	'MAIL_PASSWORD' : mail_password,
+	'MAIL_USE_TLS' : False,
+	'MAIL_USE_SSL' : True
+})
 
 mail.init_app(app)
 
@@ -64,11 +72,19 @@ def home():
 		nome = None
 	monitorias = db.child("monitorias").get()
 
+	monitoriasSalvas = []
+	for i in range(0,15):
+		try:
+			if flask.session['chave'+str(i)] != '':
+				monitoriasSalvas.append(flask.session['chave'+str(i)])
+		except:
+			flask.session['chave'+str(i)] = ''
+
 	if flask.request.method == 'POST':
 		pesquisa = flask.request.form['busca']
 		campus = flask.request.form['campus']
 		return flask.redirect('/busca?pesquisa='+pesquisa+'&campus='+campus)
-	return flask.render_template('home.html', dados=[email, monitorias.val(), emailVerificado, nome])
+	return flask.render_template('home.html', dados=[email, monitorias.val(), emailVerificado, nome, monitoriasSalvas])
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -217,8 +233,18 @@ def ativarConta():
 @app.route('/salvar')
 def salvar():
 	chave = flask.request.args.get('chave', None)
-	# flask.session['chave'] = chave
-	print(chave)
+	for i in range(0,15):
+		if flask.session['chave'+str(i)] == '':
+			flask.session['chave'+str(i)] = chave
+			break
+	return chave
+
+@app.route('/removerMonitoriaSalva')
+def remover():
+	chave = flask.request.args.get('chave', None)
+	for i in range(0,15):
+		if flask.session['chave'+str(i)] == chave:
+			flask.session['chave'+str(i)] = ''
 	return chave
 
 @app.route('/excluir')
