@@ -58,5 +58,5 @@
 
 |ID|Descrição|
 |:--:|:--:|
-| RNF01 | A aplicação deve fazer a verificação do e-mail cadastrado pelo Usuário |
-| RNF02 | A aplicação deve ser implementada para a plataforma web |
+| RNF01 | A aplicação deve ser implementada para a plataforma web |
+| RNF02 | A aplicação deve ser implementada em Linguagem Python > 3.6 |
