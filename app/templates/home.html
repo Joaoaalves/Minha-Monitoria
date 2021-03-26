@@ -15,12 +15,10 @@
 		{% if dados[1] != None %}
 		{% for monitoria in dados[1] %}
 		<div class="containerCartao">
-			<p>
-				<bold>Professor:</bold> {{ dados[1][monitoria]['nome'] }}<br>
-				<bold>Campus:</bold> {{ dados[1][monitoria]['campus'] }}<br>
-				<bold>Código:</bold> {{ dados[1][monitoria]['codigo'] }}<br>
-				<bold>Disciplina:</bold> {{ dados[1][monitoria]['disciplina'] }}
-			</p>
+			<p><bold>Professor:</bold> {{ dados[1][monitoria]['nome'] }}</p>
+			<p><bold>Campus:</bold> {{ dados[1][monitoria]['campus'] }}</p>
+			<p><bold>Código:</bold> {{ dados[1][monitoria]['codigo'] }}</p>
+			<p><bold>Disciplina:</bold> {{ dados[1][monitoria]['disciplina'] }}</p>
 
 			<!-- VISUALIZAR -->
 			<button onclick="window.location.href='/monitoria?chave={{monitoria}}'" class="button-ver">Ver</button>
@@ -123,12 +121,10 @@
 			{% if dados[1] != None %}
 			{% for monitoria in dados[1] %}
 			<div class="containerCartao">
-				<p>
-					<bold>Professor:</bold> {{ dados[1][monitoria]['nome'] }}<br>
-					<bold>Campus:</bold> {{ dados[1][monitoria]['campus'] }}<br>
-					<bold>Código:</bold> {{ dados[1][monitoria]['codigo'] }}<br>
-					<bold>Disciplina:</bold> {{ dados[1][monitoria]['disciplina'] }}
-				</p>
+				<p><bold>Professor:</bold> {{ dados[1][monitoria]['nome'] }}</p>
+				<p><bold>Campus:</bold> {{ dados[1][monitoria]['campus'] }}</p>
+				<p><bold>Código:</bold> {{ dados[1][monitoria]['codigo'] }}</p>
+				<p><bold>Disciplina:</bold> {{ dados[1][monitoria]['disciplina'] }}</p>
 
 
 				<!-- VISUALIZAR -->
@@ -138,7 +134,6 @@
 
 				<div class="extra-options">
 					<!-- COMPARTILHAR -->
-					<div class="dropdown">
 						<button class="botaoCompartilhar icon-button" onclick="compartilhar()"><i
 								class="fas fa-share-alt"></i></button>
 						<div id="containerDropdown" class="containerDropdown">
@@ -147,7 +142,6 @@
 							<a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}"
 								target="_blank">WhatsApp</a>
 						</div>
-					</div>
 
 					<!-- SALVAR -->
 					<button id="save" class="icon-button" onclick="salvar({{dados[1][monitoria]}})">
