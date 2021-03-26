@@ -70,13 +70,14 @@
 			
 			<div id="user-container">
 				<div id="arrow-up"></div>
+				<div id="small-arrow-up"></div>
 				{% if dados[3] != None %}
 				<p id="user-name">{{dados[3]}}</p>
 				<button onclick="window.location.href=''"></button>
 				<br>
 				<button onclick="window.location.href='/logout'" id="exit-btn">Sair</button><br>
 				{% else %}
-				<p>Você não está logado!</p>
+				<p style="font-size: 14px;">Você não está logado!</p>
 				<br>
 				<button onclick="window.location.href='/login'" id="lgn-btn">Login</button><br>
 				<button onclick="window.location.href='/cadastro'" id="cdst-btn">Cadastro</button>
