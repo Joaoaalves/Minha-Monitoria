@@ -87,7 +87,7 @@ body {
 	margin: 8px;
 }
 
-#bars-btn{
+#bars-btn	{
 	order: inherit !important;
 }
 
@@ -100,11 +100,14 @@ body {
 #user-container{
 	display: none;
 	border-radius: 8px;
-	background-color: lightgray;
+	background-color: rgba(211, 211, 211, 0.5);
+	border: solid;
+	border-width: 1px;
+	border-color: var(--azul);
 	width: 180px;
 	height: 180px;
 	position: absolute;
-	top: 55px;
+	top: 70px;
 	right: 10px;
 	z-index: 6;
 	text-align: center;
@@ -113,6 +116,18 @@ body {
 
 #user-container p{
 	font-weight: bold;
+}
+
+#arrow-up {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 15px solid var(--azul);
+	position: absolute;
+	right: 8px;
+	top: -15px;
+	z-index: 6;
 }
 
 .logo {
@@ -192,7 +207,7 @@ body {
 	border-radius: 15px;
 	padding: 10px;
 	margin: 10px;
-	text-align: center;
+	text-align: left;
 }
 /*COMPARTILHAR*/
 .dropdown {
@@ -230,6 +245,7 @@ body {
 	border-width: thin;
 	border-color: var(--azul);
 	margin-top: 10px;
+	margin-left: 65px;
 }
 
 .button-ver:hover{
