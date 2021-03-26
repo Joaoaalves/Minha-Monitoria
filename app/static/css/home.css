@@ -35,9 +35,26 @@ body {
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
-  font-size: 36px;
+  right: 15px;
+  font-size: 24px;
   margin-left: 50px;
+  color: white;
+  transition: all .2s ease-in-out;
+  outline: none;
+}
+
+.sidenav .closebtn:hover{
+	transform: scale(1.2);
+	cursor: pointer;
+}
+
+.sidenav .closebtn:active{
+	transform: translateY(4px);
+	cursor: default;
+}
+
+button:active, a:active{
+	transform: translateZ(4px);
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
