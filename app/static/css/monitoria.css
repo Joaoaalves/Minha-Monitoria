@@ -1,0 +1,157 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.containerTitulo{
+	width: 100%;
+	height: 200px;
+	background-image: linear-gradient(45deg, rgb(230,230,230), white);
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	padding-top: 30px;
+	overflow: hidden;
+	display: inline-block;
+}
+	svg {
+		width: 110%;
+		position: absolute;
+		left: -5%;
+		height: auto;
+		top: 0px;
+	}
+	.containerInfoTitulo {
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(0deg, rgba(255,255,255,.1), rgba(255,255,255,.9));
+		left: 0px;
+		top: 0px;
+		position: absolute;	
+		text-align: center;
+	}
+		.voltar {
+			position: absolute;
+			right: 15px;
+			top: 15px;
+			color: black;
+			font-size: 30px;
+		}
+		.disciplina {
+			font-size: 45px;
+			margin-bottom: 10px;
+			margin-top: 20px;
+		}
+		.campusD{
+			background-color: rgb(255,105,97);
+			border-radius: 10px;
+			padding: 5px;
+			width: 100px;
+			height: 15px;
+			left: 50%;
+			margin-left: -50px;
+			position: relative;
+			margin-bottom: 10px;
+		}
+		.campusFCE{
+			background-color: rgb(221,160,221);
+			border-radius: 10px;
+			padding: 5px;
+			width: 40px;
+			height: 15px;
+			left: 50%;
+			margin-left: -20px;
+			position: relative;
+			margin-bottom: 10px;
+		}
+		.campusFGA{
+			background-color: rgb(119,221,119);
+			border-radius: 10px;
+			padding: 5px;
+			width: 40px;
+			height: 15px;
+			left: 50%;
+			margin-left: -20px;
+			position: relative;
+			margin-bottom: 10px;
+		}
+		.campusFUP{
+			background-color: rgb(253,253,150);
+			border-radius: 10px;
+			padding: 5px;
+			width: 40px;
+			height: 15px;
+			position: relative;
+			left: 50%;
+			margin-left: -20px;
+			margin-bottom: 10px;
+		}
+		.botaoCompartilhar {
+			width: 40px;
+			height: 40px;
+			border-radius: 20px;
+			color: black;
+			font-size: 35px;
+			display: inline-block;
+			margin-bottom: 15px;
+		}
+
+.containerCorpo {
+	width: 90%;
+	height: auto;
+	position: relative;
+	top: 220px;
+	left: 0px;
+	text-align: center;
+}
+	.containerTexto {
+		width: 100%;
+		height: auto;
+		text-align: center;
+		padding: 10px;
+	}
+		table {
+			margin: auto;
+		}
+		.tituloInfo {
+			background-color: rgba(80,80,80,.3);
+			padding: 10px;
+			text-align: right;
+			font-weight: bolder;
+		}
+
+	.containerIRA {
+		width: 300px;
+		height: 300px;
+		background-color: red;
+		display: inline-block;
+	}
+		
+	.containerQtdInscritos {
+		width: 300px;
+		height: 300px;
+		background-color: blue;
+		display: inline-block;
+	}
+
+	.containerFormulario {
+		width: 300px;
+		height: 300px;
+		text-align: center;
+		display: inline-block;
+	}
+		.input {
+			width: 220px;
+			position: relative;
+			margin: 5px 0px 5px 0px;
+			height: 30px;
+		}
+		input[type=submit] {
+			padding: 5px 15px; 
+			background: rgb(40,40,40); 
+			border: 0 none;
+			cursor: pointer;
+			-webkit-border-radius: 5px;
+			border-radius: 5px;
+			margin-top: 10px;
+			color: white;
+		}

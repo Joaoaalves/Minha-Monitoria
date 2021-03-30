@@ -25,40 +25,21 @@ firebase = pyrebase.initialize_app(firebaseConfig)
 auth = firebase.auth()
 db = firebase.database()
 usuario = ""
-mail = Mail()
 
 with open("config/mail.key", 'r') as f:
 	mail_username = f.readline()
+	mail_username = mail_username[:-1]
 	mail_password = f.readline()
 
 app.config.update({
-	'MAIL_SERVER' : 'smpt.mail.yahoo.com',
+	'MAIL_SERVER' : 'smtp.gmail.com',
 	'MAIL_PORT' : 465,
 	'MAIL_USERNAME' : mail_username,
 	'MAIL_PASSWORD' : mail_password,
 	'MAIL_USE_TLS' : False,
 	'MAIL_USE_SSL' : True
 })
-
-mail.init_app(app)
-
-# ENVIAR EMAIL DE VERIFICACAO
-# auth.send_email_verification(user["idToken"])
-
-# ENVIAR EMAIL RECUPERACAO CONTA
-# auth.send_password_reset_email("fula@f.com")
-
-# PUSH DADOS
-# db.child("users").push(dado)
-
-# ATUALIZAR DADOS
-# db.child("users").update({"nome": "Fulano"})
-
-# REMOVER DADOS
-# db.child("users").child("Ciclano").remove()
-
-# RETORNAR DADOS
-# users = db.child("users").get()
+mail = Mail(app)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
@@ -89,43 +70,39 @@ def home():
 @app.route("/login", methods=['GET', 'POST'])
 def login():
 	if flask.request.method == 'POST':
-		email = flask.request.form['email']
-		senha = flask.request.form['senha']
-		
-		try:
-			usuario = auth.sign_in_with_email_and_password(email, senha)
-			flask.session['usuario'] = usuario['idToken']
-			return flask.redirect('/')
-		except:
-			return flask.render_template('login.html', dados="Erro! Tente novamente")
-	return flask.render_template('login.html')
+		tipo = flask.request.form['tipo']
+		if tipo == 'login':
+			email = flask.request.form['email']
+			senha = flask.request.form['senha']
 
-@app.route("/recuperarSenha", methods=['GET', 'POST'])
-def recuperarSenha():
-	if flask.request.method == 'POST':
-		email = flask.request.form['email']
-		try:
-			auth.send_password_reset_email(email)
-			return flask.redirect('/login')
-		except:
-			return flask.render_template('recuperarSenha.html', dados="Erro! Tente novamente")
-	return flask.render_template('recuperarSenha.html')
-
-@app.route("/cadastro", methods=['GET', 'POST'])
-def cadastro():
-	if flask.request.method == 'POST':
-		nome = flask.request.form['nome']
-		email = flask.request.form['email']
-		senha = flask.request.form['senha']
+			try:
+				usuario = auth.sign_in_with_email_and_password(email, senha)
+				flask.session['usuario'] = usuario['idToken']
+				return flask.redirect('/')
+			except:
+				return flask.render_template('login.html', dados=["Erro! Tente novamente", ""])
+		elif tipo == 'cadastro':
+			nome = flask.request.form['nome']
+			email = flask.request.form['email']
+			senha = flask.request.form['senha']
+			
+			try:
+				usuario = auth.create_user_with_email_and_password(email, senha)
+				flask.session['usuario'] = usuario['idToken']
+				db.child("professores").child(retornarChave(email)).child("nome").set(nome)
+				return flask.redirect('/')
+			except:
+				return flask.render_template('login.html', dados=["Erro! Tente novamente", ""])
 		
-		try:
-			usuario = auth.create_user_with_email_and_password(email, senha)
-			flask.session['usuario'] = usuario['idToken']
-			db.child("professores").child(retornarChave(email)).child("nome").set(nome)
-			return flask.redirect('/')
-		except:
-			return flask.render_template('cadastro.html', dados="Erro! Tente novamente")
-	return flask.render_template('cadastro.html')
+		else:
+			email = flask.request.form['email']
+			try:
+				auth.send_password_reset_email(email)
+				return flask.render_template('login.html', dados=["", "true"])
+			except:
+				return flask.render_template('login.html', dados=["", "false"])
+		
+	return flask.render_template('login.html', dados=["", ""])
 
 @app.route("/novaMonitoria", methods=['GET', 'POST'])
 def novaMonitoria():
@@ -150,43 +127,45 @@ def novaMonitoria():
 			return flask.render_template('novaMonitoria.html', dados="Erro! Tente novamente")
 	return flask.render_template('novaMonitoria.html')
 
-@app.route("/monitoria")
+@app.route("/monitoria", methods=['GET', 'POST'])
 def monitoria():
 	chave = flask.request.args.get('chave', None)
 	monitoria = db.child("monitorias").child(chave).get().val()
-	return flask.render_template('monitoria.html', dados=monitoria)
 
-@app.route("/mensagem", methods=['GET', 'POST'])
-def mensagem():
-	codigo = flask.request.args.get('codigo', None)
-	disciplina = flask.request.args.get('disciplina', None)
-	turma = flask.request.args.get('turma', None)
-	vagas = flask.request.args.get('vagas', None)
-	email = flask.request.args.get('email', None)
+	if monitoria:
+		codigo = monitoria['codigo']
+		disciplina = monitoria['disciplina']
+		turma = monitoria['turma']
+		vagas = monitoria['vagas']
+		email = monitoria['email']
+
+	mensagem = None
 
 	if flask.request.method == 'POST':
-		try:
-			dados = "1. Código SIGAA da disciplina " + codigo
-			dados = dados + "\n2. Nome da disciplina no SIGAA: " + disciplina
-			dados = dados + "\n3. Turma: " + turma
-			dados = dados + "\n4. Vagas da turma: " + vagas
-			dados = dados + "\n\n5. Nome do candidato(a): " + flask.request.form['nome']
-			dados = dados + "\n6. Matrícula do candidato(a): " + flask.request.form['matricula']
-			dados = dados + "\n7. IRA: " + flask.request.form['ira']
-			dados = dados + "\n8. Menção do candidato(a): " + flask.request.form['mencao']
-			dados = dados + "\n9. E-mail do candidato(a): " + flask.request.form['email']
+		dados = "1. Código SIGAA da disciplina " + codigo
+		dados = dados + "\n2. Nome da disciplina no SIGAA: " + disciplina
+		dados = dados + "\n3. Turma: " + turma
+		dados = dados + "\n4. Vagas da turma: " + vagas
+		dados = dados + "\n\n5. Nome do candidato(a): " + flask.request.form['nome']
+		dados = dados + "\n6. Matrícula do candidato(a): " + flask.request.form['matricula']
+		dados = dados + "\n7. IRA: " + flask.request.form['ira']
+		dados = dados + "\n8. Menção do candidato(a): " + flask.request.form['mencao']
+		dados = dados + "\n9. E-mail do candidato(a): " + flask.request.form['email']
 			
-			msg = Message("Monitoria UnB",
-				sender = 'minhamonitoria@yahoo.com',
-				recipients = [email],
-				body= dados
-			)
-
+		msg = Message("Monitoria UnB",
+			sender = 'minhamonitoria@yahoo.com',
+			recipients = [email],
+			body= dados
+		)
+		try:
 			mail.send(msg)
-			return flask.redirect('/')
+			mensagem = "Mensagem enviada com sucesso!"
+			return flask.render_template('monitoria.html', dados=[monitoria, chave, mensagem])
 		except:
-			return flask.render_template('mensagem.html', dados="Erro! Tente novamente")
-	return flask.render_template('mensagem.html')
+			mensagem = "Erro! Tente novamente"
+			return flask.render_template('monitoria.html', dados=[monitoria, chave, mensagem])
+
+	return flask.render_template('monitoria.html', dados=[monitoria, chave, mensagem])
 
 @app.route('/busca', methods=['GET', 'POST'])
 def busca():
@@ -213,7 +192,16 @@ def busca():
 		pesquisa = flask.request.form['busca']
 		campus = flask.request.form['campus']
 		return flask.redirect('/busca?pesquisa='+pesquisa+'&campus='+campus)
-	return flask.render_template('busca.html', dados=[email, monitoriasFiltrada, emailVerificado, nome, pesquisa])
+
+	monitoriasSalvas = []
+	for i in range(0,15):
+		try:
+			if flask.session['chave'+str(i)] != '':
+				monitoriasSalvas.append(flask.session['chave'+str(i)])
+		except:
+			flask.session['chave'+str(i)] = ''
+
+	return flask.render_template('busca.html', dados=[email, monitoriasFiltrada, emailVerificado, nome, monitoriasSalvas, pesquisa])
 
 @app.route('/logout')
 def logout():

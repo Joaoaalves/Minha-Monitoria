@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Home</title>
+		<title>Minha Monitoria</title>
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -28,11 +28,8 @@
 										<!-- WhatsApp -->
 									<a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank"><button><i class="fab fa-whatsapp"></i></button></a>
 
-									<!-- REMOVER -->
-									<a id="test" onclick="remover('{{monitoria}}', {{dados[4]}})"><button><i class="fas fa-trash-alt"></i></button></a>
-
-									<!-- ENVIAR DADOS -->
-									<a href="/mensagem?codigo={{dados[1][monitoria]['codigo']}}&disciplina={{dados[1][monitoria]['disciplina']}}&turma={{dados[1][monitoria]['turma']}}&vagas={{dados[1][monitoria]['vagas']}}&email={{dados[1][monitoria]['email']}}"><button><i class="fas fa-paper-plane"></i></button></a>
+									<!-- REMOVER DA LISTA DE MONITORIAS SALVAS -->
+									<a id="test" onclick="remover('{{monitoria}}', {{dados[4]}})"><button><i class="fas fa-minus-circle"></i></button></a>
 
 									<!-- EXCLUIR -->
 									{% if dados[0] == dados[1][monitoria]['email'] %}
@@ -58,8 +55,7 @@
 					{% endif %}
 		      		<a href="/logout"><button>Sair</button></a><br>
 				{% else %}
-					<a href="/login"><button>Login</button></a>
-			        <a href="/cadastro"><button>Cadastro</button></a>
+					<a href="/login"><button>Login/Cadastro</button></a>
 				{% endif %}
 
 				<!-- MONITORIAS SALVAS -->
@@ -105,10 +101,7 @@
 							<a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank"><button><i class="fab fa-whatsapp"></i></button></a>
 
 							<!-- SALVAR -->
-							<a onclick="salvar('{{monitoria}}', {{dados[4]}})"><button><i class="fas fa-plus"></i></button></a>
-
-							<!-- ENVIAR DADOS -->
-							<a href="/mensagem?codigo={{dados[1][monitoria]['codigo']}}&disciplina={{dados[1][monitoria]['disciplina']}}&turma={{dados[1][monitoria]['turma']}}&vagas={{dados[1][monitoria]['vagas']}}&email={{dados[1][monitoria]['email']}}"><button><i class="fas fa-paper-plane"></i></button></a>
+							<a onclick="salvar('{{monitoria}}', {{dados[4]}})"><button><i class="fas fa-plus-circle"></i></button></a>
 
 							<!-- EXCLUIR -->
 							{% if dados[0] == dados[1][monitoria]['email'] %}

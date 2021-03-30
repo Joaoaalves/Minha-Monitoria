@@ -1,33 +1,196 @@
-.form {
-	width: 90%;
-	max-width: 300px;
-	height: 240px;
-	background-color: #dddddd;
-	border-radius: 15px;
-	left: 50%;
-	margin-left: -150px;
-	text-align: center;
+body {
+	background-image: linear-gradient(45deg, rgb(230,230,230), white);
+	font-family: Arial, Helvetica, sans-serif;
+}
+h3 {
+	color: rgb(50,50,50);
+}
+svg {
+	width: 120%;
+	height: auto;
 	position: absolute;
+	margin-left: -10%;
+}
+.containerPrincipal {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+}
+.containerOpacity {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,.3);
+	position: absolute;
+	left: 0px;
+	top: 0px;	
 }
 	.voltar {
 		position: absolute;
-		left: 15px;
-		top: 22px;
+		right: 15px;
+		top: 15px;
 		color: black;
+		font-size: 30px;
 	}
-	.input {
-		width: 90%;
-		position: relative;
-		margin: 5px 0px 5px 0px;
-		height: 30px;
+	.containerFormulario {
+		height: 440px;
+		width: 600px;
+		position: absolute;
+		left: 50%;
+		margin-left: -300px;
+		top: 50%;
+		margin-top: -200px;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: 3px 3px 30px rgba(20,20,20,.3);
+		overflow: hidden;
+		padding: 5px;
 	}
-	.p {
-		color: red;
-		font-size: 10px;
-	}
-	.submit {
-		background-color: black;
-		color: white;
-		width: 80px;
-		height: 25px;
-	}
+		.containerImagem {
+			width: 300px;
+			height: 450px;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			background-image: url("/static/imgs/icc.jpg");
+			background-size: cover;
+		}
+			.containerLogo {
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				padding-top: 20px;
+				background-image: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.9));
+				padding-top: 100px;
+			}
+				.logo {
+					width: 80px;
+					height: 80px;
+					background-color: gray;
+					position: relative;
+					left: 50%;
+					margin-left: -40px;
+					top: 230px;
+					text-align: center;
+					color: white;
+					border-radius: 8px;
+				}
+				.p{
+					position: absolute;
+					top: 400px;
+					left: 0px;
+					width: 100%;
+					text-align: center;
+					color: red;
+					font-size: 16px;
+					font-weight: bolder;
+				}
+		.formLogin {
+			width: 300px;
+			height: 220px;
+			right: 0px;
+			top: 0px;
+			text-align: center;
+			position: absolute;
+			overflow: hidden;
+			border-right: 1px solid rgba(150,150,150,.5);
+		}
+			.containerLogin {
+				width: 100%;
+				height: 170px;
+				position: relative;
+			}
+				.input {
+					width: 220px;
+					position: relative;
+					margin: 5px 0px 5px 0px;
+					height: 30px;
+				}
+				input[type=submit] {
+				    padding: 5px 15px; 
+				    background: rgb(40,40,40); 
+				    border: 0 none;
+				    cursor: pointer;
+				    -webkit-border-radius: 5px;
+				    border-radius: 5px;
+				    margin-top: 10px;
+				    color: white;
+				}
+				.pRecuperarSenha {
+					text-align: right;
+					padding-right: 15px;
+				}
+				.linkRecuperarSenha {
+					font-size: 12px;
+				}
+
+		.formCadastro {
+			width: 300px;
+			height: 245px;
+			right: 0px;
+			top: 215px;
+			text-align: center;
+			position: absolute;
+			overflow: hidden;
+		}
+
+		.formRecuperar {
+			width: 300px;
+			height: 200px;
+			left: 50%;
+			margin-left: -150px;
+			top: 50%;
+			margin-top: -100px;
+			text-align: center;
+			position: absolute;
+			overflow: hidden;
+			background-color: white;
+			border-radius: 8px;
+		}
+			.fechar {
+				position: absolute;
+				left: 10px;
+				top: 20px;
+				color: black;	
+			}
+			.pModalVerdeRecuperarSenha {
+				font-size: 11px;
+				color: green;
+				text-align: center;
+			}
+			.pModalVermelhoRecuperarSenha {
+				font-size: 11px;
+				color: red;
+				text-align: center;
+			}
+
+			.modal {
+				position: fixed;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background: rgba(0,0,0,0.8);
+				z-index: 99999;
+				opacity:0;
+				-webkit-transition: opacity 400ms ease-in;
+				-moz-transition: opacity 400ms ease-in;
+				transition: opacity 400ms ease-in;
+				pointer-events: none;
+			}
+			.modal:target {
+				opacity: 1;
+				pointer-events: auto;
+			}
+			.modal > div {
+				width: 400px;
+				position: relative;
+				margin: 10% auto;
+				padding: 15px 20px;
+				background: #fff;
+			}

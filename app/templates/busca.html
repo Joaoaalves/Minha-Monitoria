@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Buscar</title>
+		<title>Minha Monitoria</title>
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/busca.css') }}">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -11,36 +11,34 @@
 			<a href="javascript:void(0)" class="closebtn" onclick="fecharNav()">&times;</a>
 				{% if dados[1] != None %}
 					{% for monitoria in dados[1] %}
-						<div class="containerCartao">
-							Professor: {{ monitoria['nome'] }}
-							Campus: {{ monitoria['campus'] }}
-							Codigo: {{ monitoria['codigo'] }}
-							Disciplina: {{ monitoria['disciplina'] }}
+						{% for monitoriaSalva in dados[4] %}
+							{% if monitoria == monitoriaSalva %}
+								<div class="containerCartao">
+									Professor: {{ monitoria['nome'] }}
+									Campus: {{ monitoria['campus'] }}
+									Codigo: {{ monitoria['codigo'] }}
+									Disciplina: {{ monitoria['disciplina'] }}
 
-							<!-- VISUALIZAR -->
-							<a href="/monitoria?chave={{monitoria['chave']}}"><button>VER</button></a>
-							
-							<!-- COMPARTILHAR -->
-							<div class="dropdown">
-							  <button class="botaoCompartilhar" onclick="compartilhar()"><i class="fas fa-share-alt"></i></button>
-							  <div id="containerDropdown" class="containerDropdown">
-							    <a href="https://www.facebook.com/sharer/sharer.php?u=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria['chave']}}" target="_blank">Facebook</a>
-							    <a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria['chave']}}" target="_blank">WhatsApp</a>
-							  </div>
-							</div>
+									<!-- VISUALIZAR -->
+									<a href="/monitoria?chave={{monitoria['chave']}}"><button>VER</button></a>
+									
+									<!-- COMPARTILHAR -->
+										<!-- Facebook -->
+									<a href="https://www.facebook.com/sharer/sharer.php?u=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria['chave']}}" target="_blank"><button><i class="fab fa-facebook"></i></button></a>
+										<!-- WhatsApp -->
+									<a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria['chave']}}" target="_blank"><button><i class="fab fa-whatsapp"></i></button></a>
 
-							<!-- SALVAR -->
-							<a id="test" onclick="salvar({{monitoria['chave']}})"><button><i class="fas fa-plus-square"></i></button></a>
+									<!-- REMOVER DA LISTA DE MONITORIAS SALVAS -->
+									<a id="test" onclick="remover('{{monitoria}}', {{dados[4]}})"><button><i class="fas fa-minus-circle"></i></button></a>
 
-							<!-- ENVIAR DADOS -->
-							<a href="/mensagem?codigo={{monitoria['codigo']}}&disciplina={{monitoria['disciplina']}}&turma={{monitoria['turma']}}&vagas={{monitoria['vagas']}}&email={{monitoria['email']}}"><button><i class="fas fa-paper-plane"></i></button></a>
+									<!-- EXCLUIR -->
+									{% if dados[0] == monitoria['email'] %}
+										<a href="/excluir?chave={{monitoria['chave']}}"><button><i class="far fa-trash-alt"></i></button></a>
+									{% endif %}
 
-							<!-- EXCLUIR -->
-							{% if dados[0] == monitoria['email'] %}
-								<a href="/excluir?chave={{monitoria['chave']}}"><button><i class="far fa-trash-alt"></i></button></a>
-							{% endif %}
-
-						</div>
+								</div>
+							{% endif %}							
+						{% endfor %}	
 					{% endfor %}
 				{% endif %}
 		</div>
@@ -57,8 +55,7 @@
 					{% endif %}
 		      		<a href="/logout"><button>Sair</button></a><br>
 				{% else %}
-					<a href="/login"><button>Login</button></a>
-			        <a href="/cadastro"><button>Cadastro</button></a>
+					<a href="/login"><button>Login/Cadastro</button></a>
 				{% endif %}
 
 				<!-- MONITORIAS SALVAS -->
@@ -68,7 +65,7 @@
 			<!-- PESQUISAR -->
 			<div class="pesquisa">
 				<form method="post" class="form">
-					<input type="text" placeholder="Buscar" name="busca" class="inputPesquisa" value="{{dados[4]}}">
+					<input type="text" placeholder="Buscar" name="busca" class="inputPesquisa" value="{{dados[5]}}">
 
 					<!-- FILTROS -->
 					<select name="campus">
@@ -96,19 +93,13 @@
 							<a href="/monitoria?chave={{monitoria['chave']}}"><button>VER</button></a>
 							
 							<!-- COMPARTILHAR -->
-							<div class="dropdown">
-							  <button class="botaoCompartilhar" onclick="compartilhar()"><i class="fas fa-share-alt"></i></button>
-							  <div id="containerDropdown" class="containerDropdown">
-							    <a href="https://www.facebook.com/sharer/sharer.php?u=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria['chave']}}" target="_blank">Facebook</a>
-							    <a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria['chave']}}" target="_blank">WhatsApp</a>
-							  </div>
-							</div>
+								<!-- Facebook -->
+							<a href="https://www.facebook.com/sharer/sharer.php?u=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria['chave']}}" target="_blank"><button><i class="fab fa-facebook"></i></button></a>
+								<!-- WhatsApp -->
+							<a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria['chave']}}" target="_blank"><button><i class="fab fa-whatsapp"></i></button></a>
 
 							<!-- SALVAR -->
-							<a id="test" onclick="salvar({{monitoria['chave']}})"><button><i class="fas fa-plus-square"></i></button></a>
-
-							<!-- ENVIAR DADOS -->
-							<a href="/mensagem?codigo={{monitoria['codigo']}}&disciplina={{monitoria['disciplina']}}&turma={{monitoria['turma']}}&vagas={{monitoria['vagas']}}&email={{monitoria['email']}}"><button><i class="fas fa-paper-plane"></i></button></a>
+							<a onclick="salvar('{{monitoria}}', {{dados[4]}})"><button><i class="fas fa-plus-circle"></i></button></a>
 
 							<!-- EXCLUIR -->
 							{% if dados[0] == monitoria['email'] %}
