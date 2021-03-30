@@ -86,10 +86,11 @@
 |:--:|:--:|:--:|
 | Backlog SAFe | Em andamento | - |
 | Revisão no Documento de Visão | Concluído | - |
-| US04 - Revisão na interface de cadastro | Em andamento | 2 |
-| US07 - Revisão na interface de busca | Em andamento | 2 |
-| US02 - Revisão na interface de login | Em andamento | 2 |
-| US12 - Salvar vagas de interesse | Em andamento | 2 |
+| US02 - Revisão na interface de login | Concluído | 2 |
+| US04 - Revisão na interface de cadastro | Concluído | 2 |
+| US06 - Revisão na interface da pagina inicial | Em andamento | 2 |
+| US07 - Revisão na interface de busca | Definido | 2 |
+| US12 - Salvar vagas de interesse | Concluído | 2 |
 
 ## Sprint 7
 
