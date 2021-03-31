@@ -84,15 +84,26 @@
 ### Backlog da Sprint
 |História|Status|Planning poker|
 |:--:|:--:|:--:|
-| Backlog SAFe | Em andamento | - |
+| Backlog SAFe | Concluído | - |
 | Revisão no Documento de Visão | Concluído | - |
 | US02 - Revisão na interface de login | Concluído | 2 |
 | US04 - Revisão na interface de cadastro | Concluído | 2 |
-| US06 - Revisão na interface da pagina inicial | Em andamento | 2 |
+| US06 - Revisão na interface da pagina inicial | Concluído | 2 |
 | US07 - Revisão na interface de busca | Definido | 2 |
 | US12 - Salvar vagas de interesse | Concluído | 2 |
 
 ## Sprint 7
+
+### Planejamento inicial do projeto
+- Implementação dos itens RF06, RF08 e RF09
+
+### Backlog da Sprint
+|História|Status|Planning poker|
+|:--:|:--:|:--:|
+| US08 - Revisão na interface de busca | Definido | 2 |
+| US07 - Revisão na interface de visualização da vaga de monitoria cadastrada | Definido | 2 |
+| US10 - Exibir dados referentes a quantidade de alunos cadastrados na monitoria | Definido | 2 |
+| US09 - Exibir dados do IRA na pagina da monitoria | Definido | 2 |
 
 ## Sprint 8
 
