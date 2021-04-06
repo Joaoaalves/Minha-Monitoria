@@ -5,6 +5,7 @@ import pyrebase
 import datetime
 from flask_mail import Mail, Message
 import re
+import heapq
 
 try:
 	with open("config/firebase.key", 'r') as f:
@@ -138,6 +139,16 @@ def monitoria():
 		turma = monitoria['turma']
 		vagas = monitoria['vagas']
 		email = monitoria['email']
+		monitoria['qtdInscritos'] = len(monitoria['IRAs'])
+		if float(vagas) > len(monitoria['IRAs']):
+			monitoria['notaIra'] = 0
+		else:
+			temp = []
+			for i in monitoria['IRAs']:
+				print(monitoria['IRAs'][i])
+				temp.append(float(monitoria['IRAs'][i]))
+			notaIra = heapq.nlargest(int(vagas),temp)
+			monitoria['notaIra'] = notaIra[-1]
 
 	mensagem = None
 
@@ -157,6 +168,9 @@ def monitoria():
 			recipients = [email],
 			body= dados
 		)
+
+		db.child("monitorias").child(chave).child("IRAs").push(flask.request.form['ira'])
+
 		try:
 			mail.send(msg)
 			mensagem = "Mensagem enviada com sucesso!"
