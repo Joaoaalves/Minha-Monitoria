@@ -55,8 +55,8 @@
 | Quadro Lean Inception | Concluído | - |
 | Revisão no Documento de Visão | Concluído | - |
 | US01 - Cadastro de Professores utilizando email | Concluído | 5 |
-| US04 - Cadastro de vagas de monitoria | Concluído | 3 |
-| US05 - Envio dos dados do aluno através da aplicação | Concluído | 3 |
+| US05 - Cadastro de vagas de monitoria | Concluído | 3 |
+| US06 - Envio dos dados do aluno através da aplicação | Concluído | 3 |
 
 ## Sprint 5
 
@@ -70,7 +70,7 @@
 | Quadro Lean Inception | Concluído | - |
 | Revisão no Documento de Visão | Concluído | - |
 | US07 - Busca por monitorias com filtros básicos | Concluído | 3 |
-| US11 - Compartilhamento das vagas de monitorias pelo Facebook e WhatsApp | Concluído | 3 |
+| US10 - Compartilhamento das vagas de monitorias pelo Facebook e WhatsApp | Concluído | 3 |
 
 ## Sprint 6
 
@@ -87,10 +87,9 @@
 | Backlog SAFe | Concluído | - |
 | Revisão no Documento de Visão | Concluído | - |
 | US02 - Revisão na interface de login | Concluído | 2 |
-| US04 - Revisão na interface de cadastro | Concluído | 2 |
-| US06 - Revisão na interface da pagina inicial | Concluído | 2 |
-| US07 - Revisão na interface de busca | Definido | 2 |
-| US12 - Salvar vagas de interesse | Concluído | 2 |
+| US03 - Revisão na interface de cadastro | Concluído | 2 |
+| US05 - Revisão na interface da pagina inicial | Concluído | 2 |
+| US11 - Salvar vagas de interesse | Concluído | 2 |
 
 ## Sprint 7
 
@@ -100,10 +99,11 @@
 ### Backlog da Sprint
 |História|Status|Planning poker|
 |:--:|:--:|:--:|
-| US08 - Revisão na interface de busca | Definido | 2 |
-| US07 - Revisão na interface de visualização da vaga de monitoria cadastrada | Definido | 2 |
-| US10 - Exibir dados referentes a quantidade de alunos cadastrados na monitoria | Definido | 2 |
-| US09 - Exibir dados do IRA na pagina da monitoria | Definido | 2 |
+| US07 - Revisão na interface de busca | Definido | 2 |
+| US06 - Revisão na interface de visualização da vaga de monitoria cadastrada | Em andamento | 2 |
+| US09 - Exibir dados referentes a quantidade de alunos cadastrados na monitoria | Concluído | 2 |
+| US08 - Exibir dados do IRA na pagina da monitoria | Concluído | 2 |
+| US04 - Revisão na interface para cadastrar monitoria | Em andamento | 2 |
 
 ## Sprint 8
 
