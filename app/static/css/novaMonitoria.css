@@ -1,0 +1,98 @@
+body {
+	background-image: linear-gradient(45deg, rgb(230,230,230), white);
+	font-family: Arial, Helvetica, sans-serif;
+}
+h3 {
+	color: rgb(50,50,50);
+}
+svg {
+	width: 120%;
+	height: auto;
+	position: absolute;
+	margin-left: -10%;
+}
+.containerPrincipal {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+}
+.containerOpacity {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,.3);
+	position: absolute;
+	left: 0px;
+	top: 0px;	
+}
+	.voltar {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		color: black;
+		font-size: 30px;
+	}
+	.containerFormulario {
+		height: 440px;
+		width: 600px;
+		position: absolute;
+		left: 50%;
+		margin-left: -300px;
+		top: 50%;
+		margin-top: -200px;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: 3px 3px 30px rgba(20,20,20,.3);
+		overflow: hidden;
+		padding: 5px;
+	}
+		.formNovaMonitoria {
+			width: 300px;
+			height: auto;
+			left: 50%;
+			margin-left: -150px;
+			top: 0px;
+			text-align: center;
+			position: absolute;
+			overflow: hidden;
+		}
+			.input {
+				width: 220px;
+				position: relative;
+				margin: 5px 0px 5px 0px;
+				height: 30px;
+			}
+			input[type=submit] {
+			    padding: 5px 15px; 
+			    background: rgb(40,40,40); 
+			    border: 0 none;
+			    cursor: pointer;
+			    -webkit-border-radius: 5px;
+			    border-radius: 5px;
+			    margin-top: 10px;
+			    color: white;
+			}
+			.pVerde{
+				position: absolute;
+				margin-top: 30px;
+				left: 0px;
+				width: 100%;
+				text-align: center;
+				color: red;
+				font-size: 16px;
+				font-weight: bolder;
+				color: green;
+			}
+			.pVermelho{
+				position: absolute;
+				margin-top: 30px;
+				left: 0px;
+				width: 100%;
+				text-align: center;
+				color: red;
+				font-size: 16px;
+				font-weight: bolder;
+				color: red;
+			}

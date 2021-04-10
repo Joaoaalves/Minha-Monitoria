@@ -1,0 +1,268 @@
+<html>
+	<head>
+		<title>Minha Monitoria</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/monitoria.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		{% if dados[0] %}
+			<div class="containerTitulo">
+				<svg x="0px" y="0px" width="1280px" height="300px" viewBox="0 0 1280 300" enable-background="new 0 0 1280 300" xml:space="preserve">
+				<switch>
+					<g i:extraneous="self">
+						<path fill="#008940" d="M1557.6-97.6c0,153.5-124.4,277.9-277.9,277.9c-153.5,0-277.9-124.4-277.9-277.9"/>
+						<rect x="1010" y="241" fill="#008940" width="76" height="76"/>
+						<circle fill="none" stroke="#133E79" stroke-width="10" stroke-miterlimit="10" cx="510.5" cy="26.6" r="72.4"/>
+						<path fill="none" stroke="#133E79" stroke-width="10" stroke-linecap="round" stroke-miterlimit="10" d="M912-96.5
+							c37.1,37.1,37.1,97.1,0,134.2c-37.1,37.1-97.1,37.1-134.2,0"/>
+						<circle fill="none" stroke="#133E79" stroke-width="10" stroke-miterlimit="10" cx="0" cy="161.1" r="52.9"/>
+						<path fill="none" stroke="#133E79" stroke-width="10" stroke-linecap="round" stroke-miterlimit="10" d="M1241,268
+							c42.5,0,77,34.5,77,77s-34.5,77-77,77"/>
+						<rect x="693" y="166" fill="none" stroke="#133E79" stroke-width="10" stroke-miterlimit="10" width="111" height="111"/>
+						<g>
+							<g>
+								<rect x="664" y="-19" fill="#008940" width="7" height="9"/>
+								<rect x="679" y="-19" fill="#008940" width="7" height="9"/>
+								<rect x="694" y="-19" fill="#008940" width="7" height="9"/>
+								<rect x="709" y="-19" fill="#008940" width="7" height="9"/>
+								<rect x="723" y="-19" fill="#008940" width="7" height="9"/>
+								<rect x="738" y="-19" fill="#008940" width="7" height="9"/>
+								<rect x="664" y="-3" fill="#008940" width="7" height="9"/>
+								<rect x="679" y="-3" fill="#008940" width="7" height="9"/>
+								<rect x="694" y="-3" fill="#008940" width="7" height="9"/>
+								<rect x="709" y="-3" fill="#008940" width="7" height="9"/>
+								<rect x="723" y="-3" fill="#008940" width="7" height="9"/>
+								<rect x="738" y="-3" fill="#008940" width="7" height="9"/>
+								<rect x="664" y="12" fill="#008940" width="7" height="9"/>
+								<rect x="679" y="12" fill="#008940" width="7" height="9"/>
+								<rect x="694" y="12" fill="#008940" width="7" height="9"/>
+								<rect x="709" y="12" fill="#008940" width="7" height="9"/>
+								<rect x="723" y="12" fill="#008940" width="7" height="9"/>
+								<rect x="738" y="12" fill="#008940" width="7" height="9"/>
+								<rect x="664" y="26" fill="#008940" width="7" height="9"/>
+								<rect x="679" y="26" fill="#008940" width="7" height="9"/>
+								<rect x="694" y="26" fill="#008940" width="7" height="9"/>
+								<rect x="709" y="26" fill="#008940" width="7" height="9"/>
+								<rect x="723" y="26" fill="#008940" width="7" height="9"/>
+								<rect x="738" y="26" fill="#008940" width="7" height="9"/>
+								<rect x="664" y="42" fill="#008940" width="7" height="9"/>
+								<rect x="679" y="42" fill="#008940" width="7" height="9"/>
+								<rect x="694" y="42" fill="#008940" width="7" height="9"/>
+								<rect x="709" y="42" fill="#008940" width="7" height="9"/>
+								<rect x="723" y="42" fill="#008940" width="7" height="9"/>
+								<rect x="738" y="42" fill="#008940" width="7" height="9"/>
+							</g>
+						</g>
+						<rect x="708" y="181" fill="#133E79" width="82" height="82"/>
+						<rect x="641" y="-50" fill="#133E79" width="82" height="82"/>
+						<rect x="1023" y="230" fill="none" stroke="#133E79" stroke-width="10" stroke-miterlimit="10" width="76" height="76"/>
+						<g>
+							<rect x="949" y="107" fill="#133E79" width="5" height="7"/>
+							<rect x="961" y="107" fill="#133E79" width="5" height="7"/>
+							<rect x="972" y="107" fill="#133E79" width="6" height="7"/>
+							<rect x="984" y="107" fill="#133E79" width="5" height="7"/>
+							<rect x="995" y="107" fill="#133E79" width="5" height="7"/>
+							<rect x="1006" y="107" fill="#133E79" width="5" height="7"/>
+							<rect x="949" y="119" fill="#133E79" width="5" height="7"/>
+							<rect x="961" y="119" fill="#133E79" width="5" height="7"/>
+							<rect x="972" y="119" fill="#133E79" width="6" height="7"/>
+							<rect x="984" y="119" fill="#133E79" width="5" height="7"/>
+							<rect x="995" y="119" fill="#133E79" width="5" height="7"/>
+							<rect x="1006" y="119" fill="#133E79" width="5" height="7"/>
+							<rect x="949" y="131" fill="#133E79" width="5" height="7"/>
+							<rect x="961" y="131" fill="#133E79" width="5" height="7"/>
+							<rect x="972" y="131" fill="#133E79" width="6" height="7"/>
+							<rect x="984" y="131" fill="#133E79" width="5" height="7"/>
+							<rect x="995" y="131" fill="#133E79" width="5" height="7"/>
+							<rect x="1006" y="131" fill="#133E79" width="5" height="7"/>
+							<rect x="949" y="142" fill="#133E79" width="5" height="7"/>
+							<rect x="961" y="142" fill="#133E79" width="5" height="7"/>
+							<rect x="972" y="142" fill="#133E79" width="6" height="7"/>
+							<rect x="984" y="142" fill="#133E79" width="5" height="7"/>
+							<rect x="995" y="142" fill="#133E79" width="5" height="7"/>
+							<rect x="1006" y="142" fill="#133E79" width="5" height="7"/>
+							<rect x="949" y="154" fill="#133E79" width="5" height="7"/>
+							<rect x="961" y="154" fill="#133E79" width="5" height="7"/>
+							<rect x="972" y="154" fill="#133E79" width="6" height="7"/>
+							<rect x="984" y="154" fill="#133E79" width="5" height="7"/>
+							<rect x="995" y="154" fill="#133E79" width="5" height="7"/>
+							<rect x="1006" y="154" fill="#133E79" width="5" height="7"/>
+						</g>
+						<circle fill="#133E79" cx="1153.3" cy="207.9" r="45.1"/>
+						<path fill="#133E79" d="M-20.2,373.1c0-109.4,88.7-198.1,198.2-198.1c109.4,0,198.2,88.7,198.2,198.1"/>
+						<path fill="none" stroke="#133E79" stroke-width="10" stroke-linecap="round" stroke-miterlimit="10" d="M591.5,186.5
+							c0-19.8,16-35.8,35.8-35.8s35.8,16,35.8,35.8"/>
+						<path fill="#133E79" d="M246.9,55c-20.6,0-37.3-16.7-37.3-37.3c0-20.6,16.7-37.3,37.3-37.3"/>
+						<circle fill="#133E79" cx="2.4" cy="162.8" r="28.2"/>
+						<circle fill="#133E79" cx="445.8" cy="59.4" r="33.7"/>
+						<path fill="none" stroke="#133E79" stroke-width="10" stroke-miterlimit="10" d="M345.3,71.4c0,14.1-11.4,25.6-25.6,25.6
+							s-25.6-11.4-25.6-25.6s11.4-25.6,25.6-25.6"/>
+						<path fill="none" stroke="#133E79" stroke-width="10" stroke-miterlimit="10" d="M636.9,299.6c0,25.1-20.3,45.4-45.4,45.4
+							s-45.4-20.3-45.4-45.4s20.3-45.4,45.4-45.4"/>
+						<path fill="none" stroke="#008940" stroke-width="15" stroke-miterlimit="10" d="M238.3,43.6c-20.6,0-37.3-16.7-37.3-37.3
+							c0-20.6,16.7-37.3,37.3-37.3"/>
+						<rect x="387" y="143.2" fill="#008940" width="78.7" height="78.7"/>
+						<g>
+							<g>
+								<rect x="409" y="173" fill="#133E79" width="7" height="8"/>
+								<rect x="423" y="173" fill="#133E79" width="7" height="8"/>
+								<rect x="438" y="173" fill="#133E79" width="6" height="8"/>
+								<rect x="452" y="173" fill="#133E79" width="7" height="8"/>
+								<rect x="466" y="173" fill="#133E79" width="6" height="8"/>
+								<rect x="480" y="173" fill="#133E79" width="6" height="8"/>
+								<rect x="409" y="188" fill="#133E79" width="7" height="9"/>
+								<rect x="423" y="188" fill="#133E79" width="7" height="9"/>
+								<rect x="438" y="188" fill="#133E79" width="6" height="9"/>
+								<rect x="452" y="188" fill="#133E79" width="7" height="9"/>
+								<rect x="466" y="188" fill="#133E79" width="6" height="9"/>
+								<rect x="480" y="188" fill="#133E79" width="6" height="9"/>
+								<rect x="409" y="203" fill="#133E79" width="7" height="8"/>
+								<rect x="423" y="203" fill="#133E79" width="7" height="8"/>
+								<rect x="438" y="203" fill="#133E79" width="6" height="8"/>
+								<rect x="452" y="203" fill="#133E79" width="7" height="8"/>
+								<rect x="466" y="203" fill="#133E79" width="6" height="8"/>
+								<rect x="480" y="203" fill="#133E79" width="6" height="8"/>
+								<rect x="409" y="216" fill="#133E79" width="7" height="9"/>
+								<rect x="423" y="216" fill="#133E79" width="7" height="9"/>
+								<rect x="438" y="216" fill="#133E79" width="6" height="9"/>
+								<rect x="452" y="216" fill="#133E79" width="7" height="9"/>
+								<rect x="466" y="216" fill="#133E79" width="6" height="9"/>
+								<rect x="480" y="216" fill="#133E79" width="6" height="9"/>
+								<rect x="409" y="232" fill="#133E79" width="7" height="8"/>
+								<rect x="423" y="232" fill="#133E79" width="7" height="8"/>
+								<rect x="438" y="232" fill="#133E79" width="6" height="8"/>
+								<rect x="452" y="232" fill="#133E79" width="7" height="8"/>
+								<rect x="466" y="232" fill="#133E79" width="6" height="8"/>
+								<rect x="480" y="232" fill="#133E79" width="6" height="8"/>
+							</g>
+						</g>
+						<path fill="none" stroke="#008940" stroke-width="15" stroke-miterlimit="10" d="M364.9,71.6c0,25.1-20.3,45.4-45.4,45.4
+							s-45.4-20.3-45.4-45.4s20.3-45.4,45.4-45.4"/>
+						<path fill="#008940" d="M172.7,7.2c0,55.7-45.1,100.8-100.8,100.8C16.2,108-28.9,62.9-28.9,7.2c0-55.7,45.1-100.8,100.8-100.8
+							C127.6-93.5,172.7-48.4,172.7,7.2z"/>
+						<circle fill="#133E79" cx="841.6" cy="-31.5" r="72.5"/>
+						<circle fill="#133E79" cx="855" cy="137.2" r="38.8"/>
+						<g>
+							<g>
+								<rect x="965" y="125" fill="#008940" width="5" height="7"/>
+								<rect x="977" y="125" fill="#008940" width="5" height="7"/>
+								<rect x="988" y="125" fill="#008940" width="6" height="7"/>
+								<rect x="1000" y="125" fill="#008940" width="5" height="7"/>
+								<rect x="1011" y="125" fill="#008940" width="5" height="7"/>
+								<rect x="1022" y="125" fill="#008940" width="5" height="7"/>
+								<rect x="965" y="137" fill="#008940" width="5" height="7"/>
+								<rect x="977" y="137" fill="#008940" width="5" height="7"/>
+								<rect x="988" y="137" fill="#008940" width="6" height="7"/>
+								<rect x="1000" y="137" fill="#008940" width="5" height="7"/>
+								<rect x="1011" y="137" fill="#008940" width="5" height="7"/>
+								<rect x="1022" y="137" fill="#008940" width="5" height="7"/>
+								<rect x="965" y="149" fill="#008940" width="5" height="7"/>
+								<rect x="977" y="149" fill="#008940" width="5" height="7"/>
+								<rect x="988" y="149" fill="#008940" width="6" height="7"/>
+								<rect x="1000" y="149" fill="#008940" width="5" height="7"/>
+								<rect x="1011" y="149" fill="#008940" width="5" height="7"/>
+								<rect x="1022" y="149" fill="#008940" width="5" height="7"/>
+								<rect x="965" y="160" fill="#008940" width="5" height="7"/>
+								<rect x="977" y="160" fill="#008940" width="5" height="7"/>
+								<rect x="988" y="160" fill="#008940" width="6" height="7"/>
+								<rect x="1000" y="160" fill="#008940" width="5" height="7"/>
+								<rect x="1011" y="160" fill="#008940" width="5" height="7"/>
+								<rect x="1022" y="160" fill="#008940" width="5" height="7"/>
+								<rect x="965" y="172" fill="#008940" width="5" height="7"/>
+								<rect x="977" y="172" fill="#008940" width="5" height="7"/>
+								<rect x="988" y="172" fill="#008940" width="6" height="7"/>
+								<rect x="1000" y="172" fill="#008940" width="5" height="7"/>
+								<rect x="1011" y="172" fill="#008940" width="5" height="7"/>
+								<rect x="1022" y="172" fill="#008940" width="5" height="7"/>
+							</g>
+						</g>
+					</g>
+				</switch>
+				</svg>
+
+				<div class="containerInfoTitulo">
+
+					<a href="/" class="voltar"><i class="fas fa-times"></i></a>
+
+					<h1 class="disciplina">{{dados[0]["disciplina"]}}</h1>
+					{% if dados[0]["campus"] == "Darcy" %}
+						<div class="campusD">Darcy Ribeiro</div>
+					{% elif dados[0]["campus"] == "FGA" %}
+						<div class="campusFGA">{{dados[0]["campus"]}}</div>
+					{% elif dados[0]["campus"] == "FCE" %}
+						<div class="campusFCE">{{dados[0]["campus"]}}</div>
+					{% elif dados[0]["campus"] == "FUP" %}
+						<div class="campusFUP">{{dados[0]["campus"]}}</div>
+					{% endif %}
+					
+
+					<!-- COMPARTILHAR -->
+						<!-- Facebook -->
+					<a href="https://www.facebook.com/sharer/sharer.php?u=https://minha-monitoria.herokuapp.com/monitoria?chave={{dados[1]}}" target="_blank"><div class="botaoCompartilhar"><i class="fab fa-facebook"></i></div></a>
+						<!-- WhatsApp -->
+					<a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{dados[1]}}" target="_blank"><div class="botaoCompartilhar"><i class="fab fa-whatsapp"></i></div></a>
+				</div>
+			</div>
+			
+			<div class="containerCorpo">
+				<div class="containerTexto">
+					<table>
+						<tr>
+							<td class="tituloInfo">Nome</td>
+							<td>{{dados[0]["nome"]}}</td>
+						</tr>
+						<tr>
+							<td class="tituloInfo">E-mail</td>
+							<td>{{dados[0]["email"]}}</td>
+						</tr>
+						<tr>
+							<td class="tituloInfo">Código</td>
+							<td>{{dados[0]["codigo"]}}</td>
+						</tr>
+						<tr>
+							<td class="tituloInfo">Turma</td>
+							<td>{{dados[0]["turma"]}}</td>
+						</tr>
+						<tr>
+							<td class="tituloInfo">Horário</td>
+							<td>{{dados[0]["horario"]}}</td>
+						</tr>
+						<tr>
+							<td class="tituloInfo">Vagas</td>
+							<td>{{dados[0]["vagas"]}}</td>
+						</tr>
+						<tr>
+							<td class="tituloInfo">Qtd Inscritos</td>
+							<td>{{dados[0]["qtdInscritos"]}}</td>
+						</tr>
+						<tr>
+							<td class="tituloInfo">Nota IRA</td>
+							<td>{{dados[0]["notaIra"]}}</td>
+						</tr>
+					</table>
+				</div>
+
+				<br>
+
+				<form method="post" class="containerFormulario">
+					<h3>Cadastrar-se</h3>
+					<input type="text" name="nome" placeholder="Nome" class="input"/><br>
+					<input type="text" name="email" placeholder="E-mail" class="input"/><br>
+					<input type="text" name="matricula" placeholder="Matrícula" class="input"/><br>
+					<input type="text" name="ira" placeholder="IRA (quatro casas decimais)" class="input"/><br>
+					<input type="text" name="mencao" placeholder="Menção" class="input"/><br>
+					<input type="submit" name="submit" value="enviar">
+
+					{% if dados[2] %}
+						<p>{{ dados[2]}}</p>
+					{% endif %}
+				</form>
+			</div>
+
+		{% else %}
+			<p>Ops! Dados não encontrados</p>
+		{% endif %}
+	</body>
+</html>

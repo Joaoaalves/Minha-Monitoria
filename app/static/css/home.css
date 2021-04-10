@@ -1,0 +1,317 @@
+:root{
+	--azul: rgb(0, 64, 128);
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border: 2px solid black;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-size: 24px;
+  margin-left: 50px;
+  transition: all .2s ease-in-out;
+  outline: none;
+  color: black;
+  border: none;
+}
+
+
+.sidenav .closebtn:hover{
+	transform: scale(1.2);
+	cursor: pointer;
+}
+
+.sidenav .closebtn:active{
+	transform: translateY(4px);
+	cursor: default;
+}
+
+button:active, a:active{
+	transform: translateZ(4px);
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 0px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+.cabecalho {
+	width: 100%;
+	height: 50px;
+	background-color: var(--azul);
+	position: relative;
+	left: 0px;
+	top: 0px;
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	word-wrap: break-word;
+	align-self: stretch;
+}
+
+#home-btn{
+	margin-left: 15px;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#bars-btn	{
+	order: inherit !important;
+	background-color: transparent;
+	color: white;
+	font-size: 18px;
+	border: none;
+	margin: 8px;
+}
+#bars-btn:hover{
+	transform: scale(1.2);
+}
+
+#user-container{
+	width: 300px;
+	height: 80px;
+	text-align: right;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding-top: 12px;
+	padding-right: 5px;
+	color: white;
+	font-weight: bolder;
+}
+#newm-btn {
+	order: inherit !important;
+	background-color: transparent;
+	color: white;
+	font-size: 18px;
+	border: none;
+	margin: 3px;
+}
+
+.logo {
+	width: 100%;
+	height: 120px;
+	background-color: white;
+	color: black;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	font-size: 55px;
+	font-weight: bolder;
+	z-index: 1;
+	padding-top: 50px;
+}
+.pesquisa {
+	width: 400px;
+	height: 150px;
+	background-color: white;
+	position: relative;
+	left: 50%;
+	margin-left: -200px;
+	top: 0px;
+	text-align: center;
+	z-index: 1;
+	border-bottom: 1px solid rgba(0, 64, 128, .3);
+}
+#inputPesquisa {
+	width: 80%;
+	max-width: 400px;
+	height: 50px;
+	border: 1px solid rgb(60,60,60);
+	font-size: 18px;
+	margin: 0px;
+	border-radius: 40px;
+	padding-left: 5px;
+}
+
+#filtros select{
+	margin: 10px;
+	border-radius: 20px;
+	border: 1px solid rgb(60,60,60);
+	height: 28px;
+	background-color: white;
+}
+
+input[type=submit] {
+    padding: 5px 15px; 
+    background: var(--azul);
+    border: 0 none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 50px;
+    width: 100px;
+    height: 35px;
+    color: white;
+}
+
+#botaoPesquisa:focus, #inputPesquisa:focus, #filtros select:focus{
+	outline: none;
+}
+
+
+.monitorias {
+	width: 90%;
+	height: calc(100% - 400px);
+	position: relative;
+	left: 5%;
+	z-index: 0;
+}
+
+.containerCartao {
+	width: 200px;
+	height: 150px;
+	display: inline-block;
+	background-color: #fff;
+	border-radius: 15px;
+	padding: 10px;
+	margin: 10px;
+	text-align: left;
+	border: 1px solid rgb(60,60,60);
+	position: relative;
+	overflow: hidden;
+}
+.containerCartao:hover {
+	box-shadow: 3px 3px 7px rgba(30,30,30,.5);
+}
+
+		.campusD{
+			background-color: rgb(255,105,97);
+			border-radius: 30px;
+			padding: 0px 2px 2px 2px;
+			text-align: center;
+			width: 100px;
+			height: 15px;
+			left: 50%;
+			margin-left: -50px;
+			position: relative;
+			margin-bottom: 10px;
+			font-size: 12px;
+		}
+		.campusFCE{
+			background-color: rgb(221,160,221);
+			border-radius: 30px;
+			padding: 0px 2px 2px 2px;
+			text-align: center;
+			width: 40px;
+			height: 15px;
+			left: 50%;
+			margin-left: -20px;
+			position: relative;
+			margin-bottom: 10px;
+			font-size: 12px;
+		}
+		.campusFGA{
+			background-color: rgb(119,221,119);
+			border-radius: 30px;
+			padding: 0px 2px 2px 2px;
+			text-align: center;
+			width: 40px;
+			height: 15px;
+			left: 50%;
+			margin-left: -20px;
+			position: relative;
+			margin-bottom: 10px;
+			font-size: 12px;
+		}
+		.campusFUP{
+			background-color: rgb(253,253,150);
+			border-radius: 30px;
+			padding: 0px 2px 2px 2px;
+			text-align: center;
+			width: 40px;
+			height: 15px;
+			position: relative;
+			left: 50%;
+			margin-left: -20px;
+			margin-bottom: 10px;
+			font-size: 12px;
+		}
+		.disciplina {
+			text-decoration: none;
+			text-align: center;
+			width: 90%;
+			height: 50px;
+			overflow: hidden;
+			position: relative;
+			left: 5%;
+			margin: 5px;
+			font-size: 25px;
+			font-weight: bolder;
+			color: black;
+		}
+		.professor {
+			text-align: center;
+			width: 90%;
+			height: 20px;
+			overflow: hidden;
+			position: relative;
+			left: 5%;
+			margin: 5px;
+			font-size: 13px;
+		}
+		.codigo {
+			text-align: center;
+			width: 50px;
+			height: 15px;
+			position: relative;
+			left: 50%;
+			margin-left: -25px;
+			font-size: 12px;
+			border-radius: 30px;
+			padding: 2px;
+			background-color: rgba(40,40,40,.3);
+		}
+button {
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+}
+
+.extra-options {
+	position: relative;
+	left: 0px;
+	width: 100%;
+	height: 30px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.eo-btn {
+	order: inherit !important;
+	background-color: transparent;
+	color: black;
+	font-size: 18px;
+	border: none;
+	margin: 4px;
+	display: inline-block;
+}
+
+* {
+	font-family: 'Noto Sans JP', sans-serif;
+	
+}
