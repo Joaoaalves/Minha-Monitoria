@@ -96,18 +96,21 @@ body {
 		}
 
 .containerCorpo {
-	width: 90%;
+	width: 600px;
 	height: auto;
 	position: relative;
 	top: 220px;
-	left: 0px;
-	text-align: center;
+	left: 50%;
+	margin-left: -300px;
+	display: flex;
 }
 	.containerTexto {
-		width: 100%;
+		width: 300px;
 		height: auto;
 		text-align: center;
 		padding: 10px;
+		display: inline-block;
+		vertical-align: center;
 	}
 		table {
 			margin: auto;
@@ -119,25 +122,12 @@ body {
 			font-weight: bolder;
 		}
 
-	.containerIRA {
-		width: 300px;
-		height: 300px;
-		background-color: red;
-		display: inline-block;
-	}
-		
-	.containerQtdInscritos {
-		width: 300px;
-		height: 300px;
-		background-color: blue;
-		display: inline-block;
-	}
-
 	.containerFormulario {
 		width: 300px;
 		height: 300px;
 		text-align: center;
 		display: inline-block;
+		vertical-align: center;
 	}
 		.input {
 			width: 220px;

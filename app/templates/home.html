@@ -4,6 +4,8 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet"> 
 	</head>
 
 	<body>
@@ -14,28 +16,35 @@
 						{% for monitoriaSalva in dados[4] %}
 							{% if monitoria == monitoriaSalva %}
 								<div class="containerCartao">
-									Professor: {{ dados[1][monitoria]['nome'] }}
-									Campus: {{ dados[1][monitoria]['campus'] }}
-									Codigo: {{ dados[1][monitoria]['codigo'] }}
-									Disciplina: {{ dados[1][monitoria]['disciplina'] }}
-
-									<!-- VISUALIZAR -->
-									<a href="/monitoria?chave={{monitoria}}"><button>VER</button></a>
-									
-									<!-- COMPARTILHAR -->
-										<!-- Facebook -->
-									<a href="https://www.facebook.com/sharer/sharer.php?u=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank"><button><i class="fab fa-facebook"></i></button></a>
-										<!-- WhatsApp -->
-									<a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank"><button><i class="fab fa-whatsapp"></i></button></a>
-
-									<!-- REMOVER DA LISTA DE MONITORIAS SALVAS -->
-									<a id="test" onclick="remover('{{monitoria}}', {{dados[4]}})"><button><i class="fas fa-minus-circle"></i></button></a>
-
-									<!-- EXCLUIR -->
-									{% if dados[0] == dados[1][monitoria]['email'] %}
-										<a href="/excluir?chave={{monitoria}}"><button><i class="far fa-trash-alt"></i></button></a>
+									{% if dados[1][monitoria]['campus'] == "Darcy" %}
+										<div class="campusD">Darcy Ribeiro</div>
+									{% elif dados[1][monitoria]['campus'] == "FGA" %}
+										<div class="campusFGA">{{ dados[1][monitoria]['campus'] }}</div>
+									{% elif dados[1][monitoria]['campus'] == "FCE" %}
+										<div class="campusFCE">{{ dados[1][monitoria]['campus'] }}</div>
+									{% elif dados[1][monitoria]['campus'] == "FUP" %}
+										<div class="campusFUP">{{ dados[1][monitoria]['campus'] }}</div>
 									{% endif %}
 
+									<a href="/monitoria?chave={{monitoria}}" class="disciplina">{{ dados[1][monitoria]['disciplina'] }}</a>
+									<div class="professor">{{ dados[1][monitoria]['nome'] }}</div>
+									<div class="codigo">{{ dados[1][monitoria]['codigo'] }}</div>
+									
+									<div class="extra-options">
+										<!-- COMPARTILHAR -->
+											<!-- Facebook -->
+										<a href="https://www.facebook.com/sharer/sharer.php?u=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank"><button class="eo-btn"><i class="fab fa-facebook"></i></button></a>
+											<!-- WhatsApp -->
+										<a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank"><button class="eo-btn"><i class="fab fa-whatsapp"></i></button></a>
+
+										<!-- REMOVER DA LISTA DE MONITORIAS SALVAS -->
+										<a id="test" onclick="remover('{{monitoria}}', {{dados[4]}})"><button class="eo-btn"><i class="fas fa-minus-circle"></i></button></a>
+
+										<!-- EXCLUIR -->
+										{% if dados[0] == dados[1][monitoria]['email'] %}
+											<a href="/excluir?chave={{monitoria}}"><button class="eo-btn"><i class="far fa-trash-alt"></i></button></a>
+										{% endif %}
+									</div>
 								</div>
 							{% endif %}							
 						{% endfor %}	
@@ -45,21 +54,24 @@
 
 		<div id="main">
 			<div class="cabecalho">
-				{% if dados[3] != None %}
-					{{dados[3]}}
-					{% if dados[2] %}
-						<!-- ADICIONAR NOVA MONITORIA -->
-						<a href="/novaMonitoria"><button><i class="fas fa-plus"></i></button></a>
-					{% else %}
-						<button id="botaoRecuperacao">Confirmar e-mail</button>
-					{% endif %}
-		      		<a href="/logout"><button>Sair</button></a><br>
-				{% else %}
-					<a href="/login"><button>Login/Cadastro</button></a>
-				{% endif %}
-
 				<!-- MONITORIAS SALVAS -->
-				<button onclick="abrirNav()"><i class="fas fa-bars"></i></button>
+				<button onclick="abrirNav()" id="bars-btn"><i class="fas fa-bars"></i></button>
+				<a href="/" id="home-btn">Minha Monitoria</a>
+
+				<div id="user-container">
+					{% if dados[3] != None %}
+						{{dados[3]}}
+						{% if dados[2] %}
+							<!-- ADICIONAR NOVA MONITORIA -->
+							<a href="/novaMonitoria"><button id="newm-btn"><i class="fas fa-plus"></i></button></a>
+						{% else %}
+							<button id="botaoRecuperacao">Confirmar e-mail</button>
+						{% endif %}
+			      		<a href="/logout"><button id="newm-btn"><i class="fas fa-sign-out-alt"></i></button></a><br>
+					{% else %}
+						<a href="/login"><button>Login/Cadastro</button></a>
+					{% endif %}
+				</div>
 			</div>
 
 			<div class="logo">Minha Monitoria</div>
@@ -67,18 +79,19 @@
 			<!-- PESQUISAR -->
 			<div class="pesquisa">
 				<form method="post" class="form">
-					<input type="text" placeholder="Buscar" name="busca" class="inputPesquisa">
+					<input type="text" placeholder="Nome" name="busca" id="inputPesquisa"><br>
 
 					<!-- FILTROS -->
-					<select name="campus">
-						<option value="todos" selected>Todos</option>
-						<option value="Darcy">Darcy Ribeiro</option>
-						<option value="FGA">FGA</option>
-						<option value="FCE">FCE</option>
-						<option value="FUP">FUP</option>
-					</select>
-
-					<input type="submit" name="Entrar" class="submit"><br>
+					<div id="filtros">
+						<select name="campus">
+							<option value="todos" selected>Todos</option>
+							<option value="Darcy">Darcy Ribeiro</option>
+							<option value="FGA">FGA</option>
+							<option value="FCE">FCE</option>
+							<option value="FUP">FUP</option>
+						</select>
+					</div>
+					<input type="submit" name="Entrar" class="submit" id="botaoPesquisa" value="Pesquisar"><br>
 				</form>
 			</div>
 			
@@ -86,28 +99,35 @@
 				{% if dados[1] != None %}
 					{% for monitoria in dados[1] %}
 						<div class="containerCartao">
-							Professor: {{ dados[1][monitoria]['nome'] }}
-							Campus: {{ dados[1][monitoria]['campus'] }}
-							Codigo: {{ dados[1][monitoria]['codigo'] }}
-							Disciplina: {{ dados[1][monitoria]['disciplina'] }}
-
-							<!-- VISUALIZAR -->
-							<a href="/monitoria?chave={{monitoria}}"><button>VER</button></a>
-							
-							<!-- COMPARTILHAR -->
-								<!-- Facebook -->
-							<a href="https://www.facebook.com/sharer/sharer.php?u=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank"><button><i class="fab fa-facebook"></i></button></a>
-								<!-- WhatsApp -->
-							<a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank"><button><i class="fab fa-whatsapp"></i></button></a>
-
-							<!-- SALVAR -->
-							<a onclick="salvar('{{monitoria}}', {{dados[4]}})"><button><i class="fas fa-plus-circle"></i></button></a>
-
-							<!-- EXCLUIR -->
-							{% if dados[0] == dados[1][monitoria]['email'] %}
-								<a href="/excluir?chave={{monitoria}}"><button><i class="far fa-trash-alt"></i></button></a>
+							{% if dados[1][monitoria]['campus'] == "Darcy" %}
+								<div class="campusD">Darcy Ribeiro</div>
+							{% elif dados[1][monitoria]['campus'] == "FGA" %}
+								<div class="campusFGA">{{ dados[1][monitoria]['campus'] }}</div>
+							{% elif dados[1][monitoria]['campus'] == "FCE" %}
+								<div class="campusFCE">{{ dados[1][monitoria]['campus'] }}</div>
+							{% elif dados[1][monitoria]['campus'] == "FUP" %}
+								<div class="campusFUP">{{ dados[1][monitoria]['campus'] }}</div>
 							{% endif %}
 
+							<a href="/monitoria?chave={{monitoria}}" class="disciplina">{{ dados[1][monitoria]['disciplina'] }}</a>
+							<div class="professor">{{ dados[1][monitoria]['nome'] }}</div>
+							<div class="codigo">{{ dados[1][monitoria]['codigo'] }}</div>
+							
+							<div class="extra-options">
+								<!-- COMPARTILHAR -->
+									<!-- Facebook -->
+								<a href="https://www.facebook.com/sharer/sharer.php?u=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank"><button class="eo-btn"><i class="fab fa-facebook"></i></button></a>
+									<!-- WhatsApp -->
+								<a href="https://api.whatsapp.com/send?text=https://minha-monitoria.herokuapp.com/monitoria?chave={{monitoria}}" target="_blank"><button class="eo-btn"><i class="fab fa-whatsapp"></i></button></a>
+
+								<!-- SALVAR -->
+								<a onclick="salvar('{{monitoria}}', {{dados[4]}})"><button class="eo-btn"><i class="fas fa-plus-circle"></i></button></a>
+
+								<!-- EXCLUIR -->
+								{% if dados[0] == dados[1][monitoria]['email'] %}
+									<a href="/excluir?chave={{monitoria}}"><button class="eo-btn"><i class="far fa-trash-alt"></i></button></a>
+								{% endif %}
+							</div>
 						</div>
 					{% endfor %}
 				{% endif %}
