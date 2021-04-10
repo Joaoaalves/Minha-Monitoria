@@ -26,7 +26,7 @@
 										<div class="campusFUP">{{ dados[1][monitoria]['campus'] }}</div>
 									{% endif %}
 
-									<a href="/monitoria?chave={{monitoria}}" class="disciplina">{{ dados[1][monitoria]['disciplina'] }}</a>
+									<div class="disciplina"><a class="aDisciplina" href="/monitoria?chave={{monitoria}}">{{ dados[1][monitoria]['disciplina'] }}</a></div>
 									<div class="professor">{{ dados[1][monitoria]['nome'] }}</div>
 									<div class="codigo">{{ dados[1][monitoria]['codigo'] }}</div>
 									
@@ -50,6 +50,7 @@
 						{% endfor %}	
 					{% endfor %}
 				{% endif %}
+				<span class="sidenavrp"></span>
 		</div>
 
 		<div id="main">
@@ -74,7 +75,19 @@
 				</div>
 			</div>
 
-			<div class="logo">Minha Monitoria</div>
+			<div class="logo">
+				<svg x="0px" y="0px" width="200px" height="115.9px" viewBox="0 0 200 115.9" enable-background="new 0 0 200 115.9" xml:space="preserve">
+					<switch>
+						<g i:extraneous="self">
+							<polygon fill="#004080" points="0.7,115.9 67.6,0 134.5,115.9 		"/>
+							<polygon fill="#004080" stroke="#FFFFFF" stroke-miterlimit="10" points="67.2,116.4 134.2,0.5 201.1,116.4 		"/>
+							<polygon fill="#FFFFFF" points="109.1,115.9 134,72.8 158.9,115.9 		"/>
+							<polygon fill="#FFFFFF" points="42.5,115.9 67.4,72.8 92.3,115.9 		"/>
+						</g>
+					</switch>
+				</svg><br>
+				Minha Monitoria
+			</div>
 
 			<!-- PESQUISAR -->
 			<div class="pesquisa">
@@ -109,7 +122,7 @@
 								<div class="campusFUP">{{ dados[1][monitoria]['campus'] }}</div>
 							{% endif %}
 
-							<a href="/monitoria?chave={{monitoria}}" class="disciplina">{{ dados[1][monitoria]['disciplina'] }}</a>
+							<div class="disciplina"><a class="aDisciplina" href="/monitoria?chave={{monitoria}}">{{ dados[1][monitoria]['disciplina'] }}</a></div>
 							<div class="professor">{{ dados[1][monitoria]['nome'] }}</div>
 							<div class="codigo">{{ dados[1][monitoria]['codigo'] }}</div>
 							

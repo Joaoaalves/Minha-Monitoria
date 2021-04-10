@@ -5,6 +5,7 @@
 body {
 	padding: 0px;
 	margin: 0px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .sidenav {
@@ -31,6 +32,13 @@ body {
   outline: none;
   color: black;
   border: none;
+}
+
+.sidenavrp {
+	width: 100px;
+	height: 150px;
+	position: relative;
+	display: inline-block;
 }
 
 
@@ -115,9 +123,9 @@ button:active, a:active{
 
 .logo {
 	width: 100%;
-	height: 120px;
+	height: 200px;
 	background-color: white;
-	color: black;
+	color: rgb(40,40,40);
 	position: relative;
 	left: 0px;
 	top: 0px;
@@ -126,6 +134,11 @@ button:active, a:active{
 	font-weight: bolder;
 	z-index: 1;
 	padding-top: 50px;
+}
+svg {
+	width: 150px;
+	height: auto;
+	margin-bottom: 15px;
 }
 .pesquisa {
 	width: 400px;
@@ -160,7 +173,7 @@ button:active, a:active{
 
 input[type=submit] {
     padding: 5px 15px; 
-    background: var(--azul);
+    background: rgb(40,40,40);
     border: 0 none;
     cursor: pointer;
     -webkit-border-radius: 5px;
@@ -203,7 +216,7 @@ input[type=submit] {
 		.campusD{
 			background-color: rgb(255,105,97);
 			border-radius: 30px;
-			padding: 0px 2px 2px 2px;
+			padding: 2px 2px 2px 2px;
 			text-align: center;
 			width: 100px;
 			height: 15px;
@@ -216,7 +229,7 @@ input[type=submit] {
 		.campusFCE{
 			background-color: rgb(221,160,221);
 			border-radius: 30px;
-			padding: 0px 2px 2px 2px;
+			padding: 2px 2px 2px 2px;
 			text-align: center;
 			width: 40px;
 			height: 15px;
@@ -229,7 +242,7 @@ input[type=submit] {
 		.campusFGA{
 			background-color: rgb(119,221,119);
 			border-radius: 30px;
-			padding: 0px 2px 2px 2px;
+			padding: 2px 2px 2px 2px;
 			text-align: center;
 			width: 40px;
 			height: 15px;
@@ -242,7 +255,7 @@ input[type=submit] {
 		.campusFUP{
 			background-color: rgb(253,253,150);
 			border-radius: 30px;
-			padding: 0px 2px 2px 2px;
+			padding: 2px 2px 2px 2px;
 			text-align: center;
 			width: 40px;
 			height: 15px;
@@ -253,14 +266,16 @@ input[type=submit] {
 			font-size: 12px;
 		}
 		.disciplina {
-			text-decoration: none;
 			text-align: center;
-			width: 90%;
-			height: 50px;
+			width: 190px;
+			height: 30px;
 			overflow: hidden;
 			position: relative;
-			left: 5%;
+			left: 5px;
 			margin: 5px;
+		}
+		.aDisciplina {
+			text-decoration: none;
 			font-size: 25px;
 			font-weight: bolder;
 			color: black;
@@ -284,7 +299,7 @@ input[type=submit] {
 			margin-left: -25px;
 			font-size: 12px;
 			border-radius: 30px;
-			padding: 2px;
+			padding: 2px 8px 2px 8px;
 			background-color: rgba(40,40,40,.3);
 		}
 button {
@@ -309,9 +324,4 @@ button {
 	border: none;
 	margin: 4px;
 	display: inline-block;
-}
-
-* {
-	font-family: 'Noto Sans JP', sans-serif;
-	
 }

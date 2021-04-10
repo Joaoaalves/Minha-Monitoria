@@ -33,6 +33,12 @@ body {
   border: none;
 }
 
+.sidenavrp {
+	width: 100px;
+	height: 150px;
+	position: relative;
+	display: inline-block;
+}
 
 .sidenav .closebtn:hover{
 	transform: scale(1.2);
@@ -239,14 +245,16 @@ input[type=submit] {
 			font-size: 12px;
 		}
 		.disciplina {
-			text-decoration: none;
 			text-align: center;
-			width: 90%;
-			height: 50px;
+			width: 190px;
+			height: 30px;
 			overflow: hidden;
 			position: relative;
-			left: 5%;
+			left: 5px;
 			margin: 5px;
+		}
+		.aDisciplina {
+			text-decoration: none;
 			font-size: 25px;
 			font-weight: bolder;
 			color: black;

@@ -24,7 +24,7 @@
 										<div class="campusFUP">{{ dados[6][monitoria]['campus'] }}</div>
 									{% endif %}
 
-									<a href="/monitoria?chave={{monitoria}}" class="disciplina">{{ dados[6][monitoria]['disciplina'] }}</a>
+									<div class="disciplina"><a class="aDisciplina" href="/monitoria?chave={{monitoria}}">{{ dados[6][monitoria]['disciplina'] }}</a></div>
 									<div class="professor">{{ dados[6][monitoria]['nome'] }}</div>
 									<div class="codigo">{{ dados[6][monitoria]['codigo'] }}</div>
 									
@@ -48,6 +48,7 @@
 						{% endfor %}	
 					{% endfor %}
 				{% endif %}
+				<span class="sidenavrp"></span>
 		</div>
 
 		<div id="main">
@@ -105,7 +106,7 @@
 								<div class="campusFUP">{{ monitoria['campus'] }}</div>
 							{% endif %}
 
-							<a href="/monitoria?chave={{monitoria['chave']}}" class="disciplina">{{ monitoria['disciplina'] }}</a>
+							<div class="disciplina"><a class="aDisciplina" href="/monitoria?chave={{monitoria}}">{{ monitoria['disciplina'] }}</a></div>
 							<div class="professor">{{ monitoria['nome'] }}</div>
 							<div class="codigo">{{ monitoria['codigo'] }}</div>
 							
