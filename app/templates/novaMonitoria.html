@@ -186,25 +186,26 @@
 			<div class="containerOpacity">
 				<a href="/" class="voltar"><i class="fas fa-times"></i></a>
 				<div class="containerFormulario">
-					<a href="/"><button>CANCELAR</button></a>
-					<form method="post">
+					<form method="post" class="formNovaMonitoria">
 						<h3>Nova monitoria</h3>
-						Campus:
-						<select name="campus">
+
+						<input type="text" name="disciplina" class="input" placeholder="Disciplina"/><br>
+						<select name="campus" class="input">
 							<option value="Darcy" selected>Darcy Ribeiro</option>
 							<option value="FGA">FGA</option>
 							<option value="FCE">FCE</option>
 							<option value="FUP">FUP</option>
 						</select>
-						Codigo da disciplina: <input type="text" name="codigo"/><br>
-						Nome da disciplina: <input type="text" name="disciplina"/><br>
-						Turma: <input type="text" name="turma"/><br>
-						Horario: <input type="text" name="horario"/><br>
-						Vagas: <input type="number" name="vagas"/><br>
-						<input type="submit" name="submit">
+						<input type="text" name="codigo" class="input" placeholder="Código"/><br>
+						<input type="text" name="turma" class="input" placeholder="Turma"/><br>
+						<input type="text" name="horario" class="input" placeholder="Horário"/><br>
+						<input type="text" name="vagas" class="input" placeholder="Vagas"/><br>
+						<input type="submit" name="submit" value="Enviar">
 
-						{% if dados %}
-							{{ dados}}
+						{% if dados == "true" %}
+							<p class="pVerde">E-mail enviado com sucesso!</p>
+						{% elif dados == "false" %}
+							<p class="pVermelho">Erro! Tente novamente</p>
 						{% endif %}
 					</form>
 				</div>

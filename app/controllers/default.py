@@ -108,16 +108,20 @@ def login():
 @app.route("/novaMonitoria", methods=['GET', 'POST'])
 def novaMonitoria():
 	if flask.request.method == 'POST':
-		dados = {
-			"nome": "",
-			"email": "",
-			"campus": flask.request.form['campus'],
-			"disciplina": flask.request.form['disciplina'],
-			"horario": flask.request.form['horario'],
-			"codigo": flask.request.form['codigo'],
-			"turma": flask.request.form['turma'],
-			"vagas": flask.request.form['vagas'],
-		}
+		dados = {}
+		if flask.request.form['campus'] and flask.request.form['disciplina'] and flask.request.form['horario'] and flask.request.form['codigo'] and flask.request.form['turma'] and flask.request.form['vagas']:
+			dados = {
+				"nome": "",
+				"email": "",
+				"campus": flask.request.form['campus'],
+				"disciplina": flask.request.form['disciplina'],
+				"horario": flask.request.form['horario'],
+				"codigo": flask.request.form['codigo'],
+				"turma": flask.request.form['turma'],
+				"vagas": flask.request.form['vagas'],
+			}
+		else:
+			return flask.render_template('novaMonitoria.html', dados="false")		
 
 		try:
 			dados['email'] =  auth.get_account_info(flask.session['usuario'])['users'][0]['email']
@@ -125,7 +129,7 @@ def novaMonitoria():
 			db.child("monitorias").push(dados)
 			return flask.redirect('/')
 		except:
-			return flask.render_template('novaMonitoria.html', dados="Erro! Tente novamente")
+			return flask.render_template('novaMonitoria.html', dados="false")
 	return flask.render_template('novaMonitoria.html')
 
 @app.route("/monitoria", methods=['GET', 'POST'])
@@ -215,7 +219,7 @@ def busca():
 		except:
 			flask.session['chave'+str(i)] = ''
 
-	return flask.render_template('busca.html', dados=[email, monitoriasFiltrada, emailVerificado, nome, monitoriasSalvas, pesquisa])
+	return flask.render_template('busca.html', dados=[email, monitoriasFiltrada, emailVerificado, nome, monitoriasSalvas, pesquisa, monitorias.val()])
 
 @app.route('/logout')
 def logout():
