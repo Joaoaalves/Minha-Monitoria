@@ -2,7 +2,7 @@
 
 |Necessidade|Prioridade|Problemas|Solução Atual|Solução Proposta|
 |:--:|:--:|:--:|:--:|:--:|
-| Comunicação de informações de vagas de monitoria | alta | Falta de um meio especifico para comunicação de informações referentes a monitorias | Postagens em redes sociais | Criação de um site que permita a disponibilização de tais informações |
+| Ferramenta para facilitar a divulgação de informações a respeito de vagas de monitoria | alta | Informações sobre monitorias dispersas nas redes sociais e sem uma ferramenta padrão para os alunos e professores da UnB | Divulgações de monitorias através de redes sociais | Uma aplicação web padrão para a comunidade acadêmica da UnB em que os professores poderiam disponibilizar informações sobre a monitoria de sua disciplina e os alunos se candidatariam para tal |
 | Inscrição em vagas de monitorias | alta | A necessidade de redigir um email com as informações necessárias para realização do cadastro | Envio de email | Criação de um formulário no site que permita o envio das informações |
 | Compartilhamento de vagas de monitoria | baixa | O compartilhamento das vagas de monitorias para outros usuários | Compartilhamento somente das vagas que foram disponibilizadas em redes sociais | Compartilhamento da página do site com as informações da monitoria e o formulário para realizar o cadastro |
 | Obtenção de informações referentes aos demais inscritos nas vagas de monitoria | baixa | Saber informações que permitam calcular a probabilidade de que o aluno seja escolhido como monitor | Não existe | Disponibilizar tais informações na página do site com os dados da disciplina |
