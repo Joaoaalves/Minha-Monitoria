@@ -143,16 +143,21 @@ def monitoria():
 		turma = monitoria['turma']
 		vagas = monitoria['vagas']
 		email = monitoria['email']
-		monitoria['qtdInscritos'] = len(monitoria['IRAs'])
-		if float(vagas) > len(monitoria['IRAs']):
+
+		try:
+			monitoria['qtdInscritos'] = len(monitoria['IRAs'])
+			if float(vagas) > len(monitoria['IRAs']):
+				monitoria['notaIra'] = 0
+			else:
+				temp = []
+				for i in monitoria['IRAs']:
+					print(monitoria['IRAs'][i])
+					temp.append(float(monitoria['IRAs'][i]))
+				notaIra = heapq.nlargest(int(vagas),temp)
+				monitoria['notaIra'] = notaIra[-1]
+		except:
+			monitoria['qtdInscritos'] = 0
 			monitoria['notaIra'] = 0
-		else:
-			temp = []
-			for i in monitoria['IRAs']:
-				print(monitoria['IRAs'][i])
-				temp.append(float(monitoria['IRAs'][i]))
-			notaIra = heapq.nlargest(int(vagas),temp)
-			monitoria['notaIra'] = notaIra[-1]
 
 	mensagem = None
 

@@ -152,7 +152,7 @@ button:active, a:active{
 
 input[type=submit] {
     padding: 5px 15px; 
-    background: var(--azul);
+    background: rgb(40,40,40);
     border: 0 none;
     cursor: pointer;
     -webkit-border-radius: 5px;
@@ -169,10 +169,12 @@ input[type=submit] {
 
 .monitorias {
 	width: 90%;
-	height: calc(100% - 400px);
+	height: auto;
 	position: relative;
 	left: 5%;
 	z-index: 0;
+	margin-bottom: 30px;
+	text-align: center;
 }
 
 .containerCartao {
