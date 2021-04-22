@@ -18,6 +18,11 @@
 | Visualizar monitoria | Permitir que o usuário visualize as vagas de monitoria cadastradas | Aluno, Professor | alta |
 | Compartilhar monitoria | Permitir que o usuário compartilhe em redes sociais as vagas de monitorias cadastradas | Aluno, Professor | baixa |
 | Buscar monitoria | Permitir que o usuário busque por vagas de monitorias cadastradas no site | Aluno, Professor | média |
+| Verificar email | Verificar se o email possui um formato válido e se já se encontra no banco de dados | Professor | alta |
+| Verificar senha | Verificar se a senha está de acordo com o email do perfil cadastrado | Professor | alta |
+| Exibir mensagem de erro | Exibir mensagem de erro caso o usuário seja impossibilitado de executar alguma ação requerida | Aluno, Professor | baixa |
+| Salvar monitoria de interesse | Permitir ao usuário salvar vagas de monitoria em um menu lateral | Aluno, Professor | baixa |
+| Cadastrar-se em monitoria | Permitir ao usuário se cadastrar em uma monitoria cadastrada no site | Aluno | alta |
 
 ## Diagrama de Casos de Uso
 
