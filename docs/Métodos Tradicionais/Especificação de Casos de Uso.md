@@ -10,7 +10,7 @@
 ## Casos de uso
 
 |Nome|Descrição|Atores|Prioridade|
-|:--:|:--:|:--:|:--:|:--:|
+|:--:|:--:|:--:|:--:|
 | Fazer cadastro | Permitir que o usuário realize o cadastro no site com seu email | Professor | alta |
 | Fazer login | Permitir que o usuário acesse o seu cadastro | Professor | alta |
 | Recuperar senha | Permitir que o usuário recupere o acesso ao seu cadastro | Professor | alta |
