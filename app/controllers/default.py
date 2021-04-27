@@ -194,7 +194,6 @@ def monitoria():
 def busca():
 	pesquisa = flask.request.args.get('pesquisa', None)
 	campus = flask.request.args.get('campus', None)
-
 	try:
 		emailVerificado = auth.get_account_info(flask.session['usuario'])['users'][0]['emailVerified']
 		email = auth.get_account_info(flask.session['usuario'])['users'][0]['email']

@@ -12,7 +12,13 @@ function initPage(){
 
 // ABRIR MENU LATERAL
 function abrirNav() {
-  window.location.href = "/?m=1";
+  var url_string = window.location.href;
+  var url = new URL(url_string);
+  var m = url.searchParams.get("m");
+  if(m == 1)
+    window.location.href = window.location.href;
+  else
+    window.location.href = window.location.href + "&m=1";
 }
 
 // FECHAR MENU LATERAL
@@ -63,5 +69,12 @@ function remover(chave, monitoriasSalvas) {
     }
   }
   $.getJSON('/removerMonitoriaSalva?chave='+chave, function(){});
-  window.location.href = "/";
+  var url_string = window.location.href;
+  var url = new URL(url_string);
+  var m = url.searchParams.get("m");
+  if(m == 1 || m == 0){
+    var temp = window.location.href.toString();
+    temp = temp.slice(0, temp.length-4);
+    window.location.href = temp;
+  }
 }

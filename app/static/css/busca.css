@@ -7,6 +7,10 @@ body {
 	margin: 0px;
 }
 
+#verificaChaves {
+	display: none;
+}
+
 .sidenav {
   height: 100%;
   width: 0;
