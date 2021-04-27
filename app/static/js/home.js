@@ -27,7 +27,7 @@ function salvar(chave, monitoriasSalvas) {
       // listaMonitoriasSalvas.push(chave);
 
       $.getJSON('/salvar?chave='+chave, function(){});
-      window.location.reload(false);
+      window.location.reload(true);
     }
   }
 }
@@ -46,5 +46,5 @@ function remover(chave, monitoriasSalvas) {
   // listaMonitoriasSalvas = tempListaMonitoriasSalvas;
 
   $.getJSON('/removerMonitoriaSalva?chave='+chave, function(){});
-  window.location.reload(false);
+  window.location.reload(true);
 }
