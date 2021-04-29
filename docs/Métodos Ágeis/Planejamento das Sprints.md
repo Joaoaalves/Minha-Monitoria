@@ -122,7 +122,7 @@
 ### Backlog da Sprint
 |História|Status|Planning poker|
 |:--:|:--:|:--:|
-| - | - | - |
+| Testes de sistema | Concluído | - |
 
 ## Sprint 10
 ### Planejamento inicial do projeto
@@ -131,7 +131,7 @@
 ### Backlog da Sprint
 |História|Status|Planning poker|
 |:--:|:--:|:--:|
-| - | - | - |
+| Testes de sistema | Concluído | - |
 
 ## Sprint 11
 ### Planejamento inicial do projeto
@@ -142,5 +142,3 @@
 |História|Status|Planning poker|
 |:--:|:--:|:--:|
 | - | - | - |
-
-## Sprint 12
