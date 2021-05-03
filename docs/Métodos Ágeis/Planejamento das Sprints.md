@@ -78,13 +78,14 @@
 - Preparação da apresentação do projeto
 - Atualização do Backlog do produto
 - Criação dos critérios de aceitação das histórias da Sprint
-- Edição do Backlog da Sprint
+- Edição do documento de Planejamento das Sprints
 - Revisão dos itens RF01 e RF05
 
 ### Backlog da Sprint
 |História|Status|Planning poker|
 |:--:|:--:|:--:|
 | Backlog SAFe | Concluído | - |
+| Edição no Documento de Planejamento das Sprints | Concluído | - |
 | Revisão no Documento de Visão | Concluído | - |
 | US02 - Revisão na interface de login | Concluído | 2 |
 | US03 - Revisão na interface de cadastro | Concluído | 2 |
@@ -134,6 +135,7 @@
 ### Backlog da Sprint
 |História|Status|Planning poker|
 |:--:|:--:|:--:|
+| Edição no Documento de Planejamento das Sprints | Concluído | - |
 | Testes de sistema | Concluído | - |
 
 ## Sprint 11
