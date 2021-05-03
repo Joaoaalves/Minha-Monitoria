@@ -123,6 +123,9 @@
 |História|Status|Planning poker|
 |:--:|:--:|:--:|
 | Testes de sistema | Concluído | - |
+| Criação do documento de Necessidades do Projeto | Concluído | - |
+| Criação do documento de Especificação de Casos de Uso | Concluído | - |
+| Criação do Diagrama de Casos de Uso | Concluído | - |
 
 ## Sprint 10
 ### Planejamento inicial do projeto
