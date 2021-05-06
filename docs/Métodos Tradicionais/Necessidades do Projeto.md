@@ -1,4 +1,4 @@
-# Necessidades
+# Necessidades do projeto
 
 |Necessidade|Prioridade|Problemas|Solução Atual|Solução Proposta|
 |:--:|:--:|:--:|:--:|:--:|
