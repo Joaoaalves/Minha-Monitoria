@@ -2,10 +2,10 @@
 
 	## Caso de Uso: Fazer cadastro
 
-		### 1. Descrição
+		### Descrição
 			Permitir que o Professor realize o cadastro no site com email.
 
-		### 2. Fluxo Básico de Eventos
+		### Fluxo Básico de Eventos
 			1. O Professor decide realizar o cadastro no site
     
     		2. O sistema apresenta um formulário contendo os seguintes campos a serem preenchidos:
@@ -23,9 +23,9 @@
 
     	O caso de uso se encerra.
 
-		### 3. Fluxos Alternativos
+		### Fluxos Alternativos
 
-			#### 3.1 Fluxo Alternativo A
+			#### Fluxo Alternativo A
 				
 				1. No passo 4 do fluxo básico, o sistema verifica alguma inconsistência nas informações disponibilizadas pelo Professor
 
@@ -33,9 +33,9 @@
 
 				3. O fluxo retorna ao passo 3 do fluxo básico
 
-		### 4. Informações Adicionais
+		### Informações Adicionais
 
-			#### 4.1 Dados do Professor
+			#### Dados do Professor
 				
 				##### Campos editáveis
 					- Nome
