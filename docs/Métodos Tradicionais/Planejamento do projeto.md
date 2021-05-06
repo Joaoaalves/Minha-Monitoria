@@ -13,7 +13,6 @@
 |:--:|:--:|:--:|:--:|
 | Fazer cadastro | Permitir a realização do cadastro no site com email | Professor | alta |
 | Fazer login | Permitir o acesso ao cadastro | Professor | alta |
-| Recuperar senha | Permitir a recuperação do acesso ao cadastro | Professor | alta |
 | Cadastrar nova monitoria | Permitir o cadastro de novas monitorias | Professor | alta |
 | Visualizar monitoria | Permitir a visualização de vagas de monitoria cadastradas | Aluno, Professor | alta |
 

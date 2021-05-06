@@ -95,26 +95,6 @@
 					- Senha
 						- Deve conter pelo menos quatro caracteres
 
-## Caso de Uso: Recuperar senha
-
-		### 1. Descrição
-
-		### 2. Fluxo Básico de Eventos
-
-		### 3. Fluxos Alternativos
-
-		### Subfluxos
-
-		### Pré-condições
-
-		### Pós-condições
-
-		### Pontos de Extensão
-
-		### Requisitos Especiais
-
-		### Informações Adicionais
-
 ## Caso de Uso: Cadastrar nova monitoria
 
 		### 1. Descrição
