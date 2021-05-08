@@ -225,7 +225,8 @@ O presente caso de uso descreve a atividade de visualização das informações 
 
 ### 2. Atores
 #### 2.1 Usuário
-Se refere a alunos e professores da Universidade de Brasília que desejam obter informações a respeito de vagas de monitorias.
+- Alunos da Universidade de Brasília que possuem interesse em realizar monitorias
+- Professor da Universidade de Brasilia que busca monitores para a sua disciplina
 
 ### 3. Condições prévias
 Não se aplica.
