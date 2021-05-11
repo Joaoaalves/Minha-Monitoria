@@ -141,7 +141,7 @@ Não se aplica.
 ### 9. Pontos de extensão
 Não se aplica.
 
-## Caso de Uso: Cadastrar nova monitoria
+## Caso de Uso: Cadastrar monitoria
 
 ### 1. Breve descrição
 O presente caso de uso descreve a atividade de realização de cadastro de uma nova monitoria no site Minha Monitoria. Basicamente é solicitado ao Professor algumas informações referentes a disciplina para que sejam armazenadas no banco de dados da aplicação.
@@ -221,7 +221,7 @@ Não se aplica.
 ## Caso de Uso: Visualizar monitoria
 
 ### 1. Breve descrição
-O presente caso de uso descreve a atividade de visualização das informações cadastradas em uma monitoria no site Minha Monitoria. Basicamente é disponibilizado ao Usuário o acesso a todas as monitorias cadastradas, assim como um meio de efetuar buscas utlizando informações como o nome da disciplina, o código da disciplina ou o ńome do professor da disciplina.
+O presente caso de uso descreve a atividade de visualização das informações cadastradas em uma monitoria no site Minha Monitoria. Basicamente é disponibilizado ao Usuário o acesso a todas as monitorias cadastradas, assim como um meio de efetuar buscas utlizando informações como o nome da disciplina, o código da disciplina ou o nome do professor da disciplina.
 
 ### 2. Atores
 #### 2.1 Usuário
@@ -263,7 +263,19 @@ Não se aplica.
 
 	3. O fluxo retorna ao passo 3 do FB
 
-#### 5.2 FA02 - Cadastrar-se em uma monitoria ????????????????????
+#### 5.2 FA02 - Salvar monitoria
+	1. No passo 2 do FB, o Usuário decide salvar a vaga de monitoria para consulta posterior
+
+	2. O sistema salva a monitoria em uma lista (RN06)
+
+	3. O fluxo retorna ao passo 2 do FB
+
+#### 5.3 FA03 - Compartilhar monitoria
+	1. No passo 2 do FB, o Usuário decide compartilhar a vaga de monitoria
+
+	2. O sistema deve redirecionar o Usuário para a página da rede social com os dados a serem compartilhados (RN07)
+
+	3. O fluxo retorna ao passo 2 do FB
 
 ### 6. Fluxo de Exceção (FE)
 Não se aplica.
@@ -293,10 +305,66 @@ A cada inscrição realizada o sistema deve incrementar em uma unidade o número
 - Caso o campus selecionado seja o "Todos", o sistema não deve realizar filtragem por campus
 - Caso o campus selecionado seja diferente de "Todos", o sistema deve exibir apenas as monitorias em que as disciplinas sejam ministradas no campus selecionado pelo Usuário
 
+#### 7.6 RN06 - Lista de monitorias salvas
+O sistema deve permitir salvar no máximo 15 monitorias
+
+#### 7.7 RN07 - Compartilhar monitorias
+O sistema deve permitir o compartilhamento das informações da monitoria no WhatsApp e Facebook
+
 ### 8. Pós-condições
 Não se aplica.
 
 ### 9. Pontos de extensão
 Não se aplica.
 
-## Caso de Uso: Cadastrar-se em uma monitoria ???????????????
+## Caso de Uso: Efetuar inscrição
+
+### 1. Breve descrição
+O presente caso de uso descreve a atividade do Aluno efetuar a sua inscrição em uma das monitorias disponibilizadas na aplicação.
+
+### 2. Atores
+#### 2.1 Aluno
+Alunos da Universidade de Brasília que possuem interesse em realizar monitorias
+
+### 3. Condições prévias
+- O Aluno precisa ter executado o caso de uso Visualizar monitoria
+
+### 4. Fluxo Básico (FB)
+	1. O Aluno decide se increver em uma determinada monitoria
+    
+    2. O sistema apresenta um formulário contendo os seguintes campos a serem preenchidos:
+    	- Nome
+   		- Email
+    	- Matrícula
+    	- IRA
+    	- Menção
+	
+	3. o Aluno informa os dados
+
+	4. O sistema realiza o envio das informações (RN01)
+	
+	O caso de uso se encerra.
+
+### 5. Fluxos Alternativos (FA)
+Não se aplica.
+
+### 6. Fluxo de Exceção (FE)
+#### 6.1 FE01 - Inconsistência nos dados
+	1. No passo 4 do FB, o sistema não consegue efetuar o envio das informações devido a alguma inconsistência nos dados disponibilizados
+
+	2. O sistema informa uma mensagem de erro ao Aluno (RN02)
+
+	3. O fluxo retorna ao passo 3 do FB
+
+### 7. Regras de Negócio (RN)
+#### 7.1 RN01 - Envio dos dados
+Os dados do aluno devem ser enviados ao email de cadastro do Professor
+
+#### 7.2 RN02 - Mensagem de Erro
+O sistema deve exibir a mensagem "Erro! Tente novamente".
+
+### 8. Pós-condições
+Não se aplica.
+
+### 9. Pontos de extensão
+Não se aplica.
